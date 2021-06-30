@@ -4,32 +4,70 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Orinoco</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css" integrity="sha512-xnP2tOaCJnzp2d2IqKFcxuOiVCbuessxM6wuiolT9eeEJCyy0Vhcwa4zQvdrZNVqlqaxXhHqsSV1Ww7T2jSCUQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css" integrity="sha512-usVBAd66/NpVNfBge19gws2j6JZinnca12rAe2l+d+QkLU9fiG02O1X8Q6hepIpr/EYKZvKx/I9WsnujJuOmBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="/css/style.css">
     </head>
     <body>
         <header class="p-3 bg-dark text-white">
             <div class="container">
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                    <a href="index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <a href="index.html" class="d-flex align-items-center mb- mb-lg-0 text-white text-decoration-none">
                         <img class="bi me-2 rounded" width="64" height="64" role="img" aria-label="Orinco" src="/images/logo.jpg"></img>
                     </a>
-
                     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                         <li><a href="#" class="nav-link px-2 text-secondary">Accueil</a></li>
-                        <li><a href="#" class="nav-link px-2 text-white">Mon panier</a></li>
                     </ul>
 
-                    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-                        <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
-                    </form>
-
                     <div class="text-end">
-                        <button type="button" class="btn btn-outline-light me-2">Login</button>
-                        <button type="button" class="btn btn-warning">Sign-up</button>
+                        <button type="button" class="btn btn-warning">Panier <i class="bi bi-cart"></i></button>
                     </div>
                 </div>
             </div>
         </header>
+
+        <main class="container">
+            <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+                <div class="col-md-6 px-0">
+                    <h1 class="display-4 fst-italic">Title of a longer featured blog post</h1>
+                    <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
+                    <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col-md-6">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">Univers Enfant</strong>
+                            <h3 class="mb-0">Ours en peluche fait main</h3>
+                            <div class="mb-1 text-muted">Différents modèles disponibles</div>
+                                <p class="card-text mb-auto">Les enfants l'adore !</p>
+                                <a href="#" class="stretched-link">Voir le produit</a>
+                            </div>
+                            <div class="col-auto d-none d-lg-block">
+                                <img src="/images/teddy_1.jpg" class="img-fluid rounded" width="200" height="250" role="img" aria-label="Ours en peluche fait main" alt="Ours en peluche fait main" focusable="false"><title>Ours en peluche fait main</title></img>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                            <div class="col p-4 d-flex flex-column position-static">
+                                <strong class="d-inline-block mb-2 text-success">Univers Photo/Vidéo</strong>
+                                <h3 class="mb-0">Caméra vintage</h3>
+                                <div class="mb-1 text-muted">Différents modèles disponibles</div>
+                                    <p class="mb-auto">Envie d'une caméra vintage ? Ici vous allez trouver votre bonheur.</p>
+                                    <a href="#" class="stretched-link">Voir le produit</a>
+                                </div>
+                                <div class="col-auto d-none d-lg-block">
+                                    <img src="/images/vcam_1.jpg" class="img-fluid rounded" width="200" height="250" role="img" aria-label="Camera vintage" alt="Caméra vintage" focusable="false"><title>Caméra vintage</title></img>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js" integrity="sha512-72WD92hLs7T5FAXn3vkNZflWG6pglUDDpm87TeQmfSg8KnrymL2G30R7as4FmTwhgu9H7eSzDCX3mjitSecKnw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </body>
