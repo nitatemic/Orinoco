@@ -1,3 +1,4 @@
-.object-fit-cover   {
-    object-fit: cover;
+.container  {
+    padding-left : 0;
+    padding-right : 0;
 }
