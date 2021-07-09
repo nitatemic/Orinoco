@@ -13,10 +13,9 @@
             <div class="container">
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                     <a href="index.html" class="d-flex align-items-center mb- mb-lg-0 text-white text-decoration-none">
-                        <img class="bi me-2 rounded" width="64" height="64" role="img" aria-label="Orinco" src="/images/logo.jpg"></img>
+                        <img class="bi me-2 rounded" width="64" height="64" role="img" alt ="Logo de Orinco" aria-label="Orinco" src="./images/logo.jpg">
                     </a>
                     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li><a href="#" class="nav-link px-2 text-secondary">Accueil</a></li>
                     </ul>
 
                     <div class="text-end">
@@ -34,30 +33,28 @@
                 </div>
             </div>
 
-            <div class="row mb-2">
+            <div class = "row mb-2">
                 <div class="col-md-6">
-                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 cursor-pointer" onclick="document.location='/product/teddybear.html'">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 cursor-pointer" onclick="document.location='./product/teddybear.html'">
                         <div class="col p-4 d-flex flex-column position-static">
                             <h3 class="mb-0" id="teddy__0__name">Nom</h3>
                             <div class="mb-1 text-muted" id="teddy__0__price">Prix</div>
-                                <p class="card-text mb-auto" id="teddy__0__description">Description</p>
-                            </div>
-                            <div class="col-auto d-none d-lg-block">
-                                <img id ="teddy__0__img" ></img>
-                            </div>
+                            <p class="card-text mb-auto" id="teddy__0__description">Description</p>
+                        </div>
+                        <div class ="col-auto d-none d-lg-block">
+                            <img id ="teddy__0__img">   <!--Do I have to put the alt and src when they will be put via JS?-->
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 cursor-pointer" onclick="document.location='/product/vintagecamera.html'"">
-                            <div class="col p-4 d-flex flex-column position-static">
-                                <h3 class="mb-0">Nom</h3>
-                                <div class="mb-1 text-muted">Prix</div>
-                                    <p class="mb-auto">Description</p>
-                                </div>
-                                <div class="col-auto d-none d-lg-block">
-                                    <img src="/images/vcam_1.jpg" class="img-fluid rounded" width="200" height="250" role="img" aria-label="Camera vintage" alt="Caméra vintage" focusable="false"><title>Caméra vintage</title></img>
-                                </div>
-                            </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 cursor-pointer" onclick="document.location='/product/vintagecamera.html'">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <h3 class="mb-0" id="teddy__1__name">Nom</h3>
+                            <div class="mb-1 text-muted" id="teddy__1__price">Prix</div>
+                            <p class="mb-auto" id="teddy__1__description">Description</p>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <img src="./images/vcam_1.jpg" class="img-fluid rounded" width="200" height="250" role="img" aria-label="Camera vintage" alt="Caméra vintage">
                         </div>
                     </div>
                 </div>
