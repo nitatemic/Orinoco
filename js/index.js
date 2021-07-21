@@ -16,7 +16,6 @@ fetch ("http://localhost:3000/api/teddies/")
             let link = document.getElementById("teddy__"+ i +"__link");
             link.setAttribute("href", "./product/teddy" + i + ".html");
         }
-        //TODO : Build the entire HTML part via JS
   })
   .catch(function() {
       console.error("The site could not retrieve the information from the server. Did you do \"Node server\"?");
