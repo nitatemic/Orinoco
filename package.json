@@ -1,0 +1,20 @@
+{
+  "name": "orinoco-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "sass": "sass ./sass/main.scss:./css/style.css -w --style compressed",
+    "prefix": "postcss ./css/style.css --use autoprefixer -d./css/prefixed/"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.40.0",
+    "webpack-cli": "^4.7.2"
+  },
+  "browserslist": "last 4 versions",
+  "dependencies": {
+    "sass": "^1.35.2"
+  }
+}
