@@ -6,14 +6,13 @@
         <title>Orinoco</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css" integrity="sha512-xnP2tOaCJnzp2d2IqKFcxuOiVCbuessxM6wuiolT9eeEJCyy0Vhcwa4zQvdrZNVqlqaxXhHqsSV1Ww7T2jSCUQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css" integrity="sha512-usVBAd66/NpVNfBge19gws2j6JZinnca12rAe2l+d+QkLU9fiG02O1X8Q6hepIpr/EYKZvKx/I9WsnujJuOmBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
     </head>
     <body>
         <header class="p-3 bg-dark text-white">
-            <div class="container">
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                     <a href="index.html" class="d-flex align-items-center mb- mb-lg-0 text-white text-decoration-none">
-                        <img class="bi me-2 rounded" width="64" height="64" role="img" alt ="Logo de Orinco" aria-label="Orinco" src="./images/logo.jpg">
+                        <img class="bi me-2 rounded" width="64" height="64" role="img" alt ="Logo de Orinco" aria-label="Orinco" src="./img/logo.jpg">
                     </a>
                     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     </ul>
@@ -26,38 +25,77 @@
         </header>
 
         <main class="container">
-            <div class="p-4 p-md-5 mb-4 text-white rounded-bottom bg-dark">
+            <div class="p-4 p-md-5 mb-4 text-white rounded-bottom bg-dark"> <!--TODO : Padding 0-->
                 <div class="col-md-6 px-0">
                     <h1 class="display-4 fst-italic">Orinoco</h1>
-                    <p class="lead my-3">Découvrez notre sélection de produits ci-dessous.</p>
+                    <p class="lead my-3">Découvrez notre sélection d'ours en peluches ci-dessous.</p>
                 </div>
             </div>
 
             <div class = "row mb-2">
                 <div class="col-md-6">
-                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 cursor-pointer" onclick="document.location='./product/teddybear.html'">
-                        <div class="col p-4 d-flex flex-column position-static">
-                            <h3 class="mb-0" id="teddy__0__name">Nom</h3>
-                            <div class="mb-1 text-muted" id="teddy__0__price">Prix</div>
-                            <p class="card-text mb-auto" id="teddy__0__description">Description</p>
+                    <a id="teddy__0__link" class="teddylink">
+                        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 cursor-pointer">
+                            <div class="col p-4 d-flex flex-column position-static">
+                                <h3 class="mb-0" id="teddy__0__name">Nom</h3>
+                                <div class="mb-1 text-muted" id="teddy__0__price">Prix</div>
+                                <p class="card-text mb-auto" id="teddy__0__description">Description</p>
+                            </div>
+                            <div class ="col-auto d-none d-lg-block" id="teddy__0__img">
+                            </div>
                         </div>
-                        <div class ="col-auto d-none d-lg-block">
-                            <img id ="teddy__0__img">   <!--Do I have to put the alt and src when they will be put via JS?-->
-                        </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-md-6">
-                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 cursor-pointer" onclick="document.location='/product/vintagecamera.html'">
-                        <div class="col p-4 d-flex flex-column position-static">
-                            <h3 class="mb-0" id="teddy__1__name">Nom</h3>
-                            <div class="mb-1 text-muted" id="teddy__1__price">Prix</div>
-                            <p class="mb-auto" id="teddy__1__description">Description</p>
+                    <a id="teddy__1__link" class="teddylink">
+                        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 cursor-pointer">
+                            <div class="col p-4 d-flex flex-column position-static">
+                                <h3 class="mb-0" id="teddy__1__name">Nom</h3>
+                                <div class="mb-1 text-muted" id="teddy__1__price">Prix</div>
+                                <p class="card-text mb-auto" id="teddy__1__description">Description</p>
+                            </div>
+                            <div class="col-auto d-none d-lg-block" id="teddy__1__img">
+                            </div>
                         </div>
-                        <div class="col-auto d-none d-lg-block">
-                            <img src="./images/vcam_1.jpg" class="img-fluid rounded" width="200" height="250" role="img" aria-label="Camera vintage" alt="Caméra vintage">
+                    </a>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <a id="teddy__2__link" class="teddylink">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 cursor-pointer">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <h3 class="mb-0" id="teddy__2__name">Nom</h3>
+                            <div class="mb-1 text-muted" id="teddy__2__price">Prix</div>
+                            <p class="mb-auto" id="teddy__2__description">Description</p>
+                        </div>
+                        <div class="col-auto d-none d-lg-block" id="teddy__2__img">
                         </div>
                     </div>
+                </a>
+                <a id="teddy__3__link" class="teddylink">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 cursor-pointer">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <h3 class="mb-0" id="teddy__3__name">Nom</h3>
+                            <div class="mb-1 text-muted" id="teddy__3__price">Prix</div>
+                            <p class="mb-auto" id="teddy__3__description">Description</p>
+                        </div>
+                        <div class="col-auto d-none d-lg-block" id="teddy__3__img">
+                        </div>
+                    </div>
+                    </a>
                 </div>
+                
+                <a id="teddy__4__link" class="teddylink">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 cursor-pointer">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <h3 class="mb-0" id="teddy__4__name">Nom</h3>
+                            <div class="mb-1 text-muted" id="teddy__4__price">Prix</div>
+                            <p class="mb-auto" id="teddy__4__description">Description</p>
+                        </div>
+                        <div class="col-auto d-none d-lg-block" id="teddy__4__img">
+                        </div>
+                    </div>
+                </a>
             </div>
         </main>
 
