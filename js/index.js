@@ -5,9 +5,7 @@ fetch ("http://localhost:3000/api/teddies/")
         }
     })
     .then(function(teddys) {
-        console.log(teddys.length);
         for(let i = 0; i < teddys.length; i++) {
-            console.log(i);
             document.getElementById("teddy__" + i + "__name").innerText = teddys[i].name;
             let temp = teddys[i].price / 100;
             document.getElementById("teddy__" + i + "__price").innerText = temp + " €";
