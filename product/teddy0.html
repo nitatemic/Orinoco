@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Norbert | Orinoco</title>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css"
+            integrity="sha512-xnP2tOaCJnzp2d2IqKFcxuOiVCbuessxM6wuiolT9eeEJCyy0Vhcwa4zQvdrZNVqlqaxXhHqsSV1Ww7T2jSCUQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css"
+            integrity="sha512-usVBAd66/NpVNfBge19gws2j6JZinnca12rAe2l+d+QkLU9fiG02O1X8Q6hepIpr/EYKZvKx/I9WsnujJuOmBA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+
+    <body>
+        <header class="p-3 bg-dark text-white">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="../index.html" class="d-flex align-items-center mb- mb-lg-0 text-white text-decoration-none">
+                    <img class="bi me-2 rounded" width="64" height="64" role="img" alt ="Logo de Orinco" aria-label="Orinco" src="../img/logo.jpg">
+                </a>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                </ul>
+                <div class="text-end">
+                    <button type="button" class="btn btn-warning">Panier <i class="bi bi-cart"></i></button>
+                </div>
+            </div>
+        </header>
+        <!--End of Navbar-->
+
+        <main class="container">
+            <div class="row">
+                <div class="col">
+                    <div class ="col-auto d-none d-lg-block" id="teddy__0__img">
+                    </div>
+                </div>
+                <div class="col mt-5">
+                    <h1 id="teddy__0__name"></h1>
+                    <h2 class="h5">Plusieurs modèles disponibles</h2>
+                    <br>
+                    <h3 class="h6" id="teddy__0__description"></h3>
+                    <br>
+                    <form>
+                        <select name="dropdown">
+                            <option selected hidden>Choisissez votre modèle</option> <!--Not compatible with IE 11-->
+                            <option value="Modèle 1" >Modèle 1</option>
+                            <option value="Modèle 2">Modèle 2</option>
+                            <option value="Modèle 3">Modèle 3</option>
+                            <option value="Modèle 4">Modèle 4</option>
+                            <option value="Modèle 5">Modèle 5</option>
+                        </select>
+                    </form>
+                    <br>
+                    <h4 id="teddy__0__price"></h4>
+                    <button type="button" class="btn btn-warning">Ajouter au panier</button> <!--TODO : Rendre le buton fonctionnel-->
+                </div>
+                <div class="col"> <!--Reviews-->
+
+                </div>
+            </div>
+        </main>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js"
+            integrity="sha512-72WD92hLs7T5FAXn3vkNZflWG6pglUDDpm87TeQmfSg8KnrymL2G30R7as4FmTwhgu9H7eSzDCX3mjitSecKnw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="../js/teddy0.js"></script>
+    </body>
+
+</html>
