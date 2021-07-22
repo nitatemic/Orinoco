@@ -41,20 +41,18 @@
                     <h2 class="h5">Plusieurs couleurs disponibles</h2>
                     <br>
                     <h3 class="h6" id="teddy__0__description"></h3>
-                    <br>
+                    <h4 id="teddy__0__price"></h4>
                     <form>
-                        <select name="dropdown">
-                            <option selected hidden>Choisissez votre couleur</option> <!--Not compatible with IE 11-->
+                        <select name="dropdown" id="colorschoise">
                             <option value="Modèle 1" >Modèle 1</option>
                             <option value="Modèle 2">Modèle 2</option>
                             <option value="Modèle 3">Modèle 3</option>
                             <option value="Modèle 4">Modèle 4</option>
                             <option value="Modèle 5">Modèle 5</option>
                         </select>
+                        <br>
+                        <input type="submit" class="btn btn-warning" value="Ajouter au panier"/> <!--TODO : Rendre le buton fonctionnel-->
                     </form>
-                    <br>
-                    <h4 id="teddy__0__price"></h4>
-                    <button type="button" class="btn btn-warning">Ajouter au panier</button> <!--TODO : Rendre le buton fonctionnel-->
                 </div>
                 <div class="col"> <!--Reviews-->
 
@@ -66,5 +64,4 @@
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="../js/teddy0.js"></script>
     </body>
-
 </html>
