@@ -13,5 +13,5 @@ fetch ("http://localhost:3000/api/teddies/")
         document.getElementById("teddy__" + i + "__img").innerHTML = "<img src='" + teddys[i].imageUrl + "' id =\"teddy__" + i + "__img\" class=\"img-fluid rounded\"  width=\"200\" height=\"250\" role=\"img\" aria-label=\"Ours en peluche fait main\" alt=\"Ours en peluche fait main\" >";
     })
     .catch(function() {
-        console.error("The site could not retrieve the information from the server. Did you do \"Node server\"?");
+        console.error("Oops, an error occurred. Did you do \"Node server\"?");
     });
