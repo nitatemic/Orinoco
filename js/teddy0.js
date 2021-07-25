@@ -14,7 +14,6 @@ fetch ("http://localhost:3000/api/teddies/")
 
 
         for(let j = 0; j < teddys[i].colors.length; j++) {
-            console.log("coucou");
             document.getElementById("colorschoise").innerHTML = "<option value=\" "+  teddys[i].colors[0] +"\" >" + teddys[i].colors[0] + "</option>" +
                 "                            <option value=\" "+  teddys[i].colors[1] +"\" >" + teddys[i].colors[1] + "</option>" +
                 "                            <option value=\" "+  teddys[i].colors[2] +"\" >" + teddys[i].colors[2] + "</option>" +
