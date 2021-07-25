@@ -16,5 +16,5 @@ fetch ("http://localhost:3000/api/teddies/")
         }
   })
   .catch(function() {
-      console.error("The site could not retrieve the information from the server. Did you do \"Node server\"?");
+      console.error("Oops, an error occurred. Did you do \"Node server\"?");
   });
