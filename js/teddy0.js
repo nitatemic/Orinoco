@@ -19,7 +19,7 @@ fetch ("http://localhost:3000/api/teddies/")
                 "                            <option value=\" "+  teddys[i].colors[1] +"\" >" + teddys[i].colors[1] + "</option>" +
                 "                            <option value=\" "+  teddys[i].colors[2] +"\" >" + teddys[i].colors[2] + "</option>" +
                 "                            <option value=\" "+  teddys[i].colors[3] +"\" >" + teddys[i].colors[3] + "</option>";
-        }
+        }   //todo : Faire la boucle
     })
     .catch(function() {
         console.error("Oops, an error occurred. Did you do \"Node server\"?");
