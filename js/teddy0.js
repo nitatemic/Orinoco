@@ -1,4 +1,4 @@
-fetch ("http://localhost:3000/api/teddies/")
+fetch ("https://orinoco-nitatemic.herokuapp.com/api/teddies")
     .then(function(res){
         if (res.ok) {
             return res.json();
