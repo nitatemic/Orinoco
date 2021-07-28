@@ -26,5 +26,5 @@ fetch(apiUrl)
     teddyImgContainer.appendChild(teddyImg);
   })
   .catch(function () {
-    console.error('Oops, an error occurred. Did you do "Node server"?');
+    console.error('Oops, an error occurred. Please contact alexandre@nitatemic.ovh);
   });
