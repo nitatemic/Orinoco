@@ -50,6 +50,12 @@ fetch(apiUrl)
     h3.textContent = teddys[i].price / 100 + "€";
     col2.appendChild(h3);
 
+    //Créer un h4 dans la div container
+    var h4 = document.createElement("h4");
+    h4.className = "h6";
+    h4.textContent = "Choissisez la couleur de votre teddy :";
+    col2.appendChild(h4);
+
     //Créer un form dans la div col2
     var form = document.createElement("form");
     form.className = "form-inline";
