@@ -23,7 +23,7 @@ fetch(apiUrl)
 
     //Ajouter l'image dans la div teddyImgContainer
     var teddyImg = document.createElement("img");
-    teddyImg.src = apiUrl + "/../../images/teddy_1.jpg";  //todo : utilise l'url de l'image
+    teddyImg.src = teddys[i].imageUrl;
     teddyImg.className = "img-fluid rounded";
     teddyImg.width = "400";
     teddyImg.height = "500";
