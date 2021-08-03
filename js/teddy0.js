@@ -5,7 +5,18 @@ fetch(apiUrl)
     }
   })
   .then(function (teddys) {
-      let i = 0;
+      const urlParams = new URLSearchParams(window.location.search);
+      const id = urlParams.get("id");
+      let i;
+      
+      //Trouver à quel teddys appartient l'id passé en paramètre et stocké son numero dans i
+      for (let j = 0; j < teddys.length; j++) {
+        if (teddys[j]._id === id) {
+          i = j;
+          break;
+        }
+      }
+
     //Créer une div dans la div container
     var row1 = document.createElement("div");
     row1.className = "row";
