@@ -22,6 +22,9 @@ fetch(apiUrl)
       }
     }
 
+    //Put the name of the teddie in the title of the page
+    document.title = teddys[i].name + " | Orinoco";
+
     //Create a div in the container div
     let row1 = document.createElement("div");
     row1.className = "row";
@@ -94,9 +97,34 @@ fetch(apiUrl)
     let submit = document.createElement("button");
     submit.type = "submit";
     submit.className = "btn btn-warning";
+    //Ajouter un attribut onclick au bouton
+    submit.onclick = function () {
+      // ! : J'arrive pas à ajouter le onclick au bouton
+      getColor();
+    };
     submit.textContent = "Ajouter au panier";
     form.appendChild(submit);
+
+    //Créer une fonction qui recupere la couleur choisie par l'utilisateur dans le select ainsi que l'id du teddy et la stocke dans un objet avec localStorage
+    //Cette fonction sera appelée par le button "Ajouter au panier"
+
+    //Fonction qui recupere la couleur choisie par l'utilisateur dans le select ainsi que l'id du teddy et la stocke dans un string avec localStorage
+    function getColor() {
+      const d = new Date();
+      const color = document.getElementById("colorschoise").value;
+
+      const temp = {
+        id: id,
+        color: color,
+      };
+
+      //Ajouter l'objet avec les informations de l'utilisateur dans la variable localStorage
+      localStorage.setItem(d.getTime(), JSON.stringify(temp)); //J'utilise d.getTime pour générer un nom unique
+    }
   })
+
+
+
   .catch(function () {
     console.error('Oops, an error occurred. Please contact alexandre@nitatemic.ovh');
   });
