@@ -6,7 +6,7 @@
     }
     console.log(products);  //Je recupere un tableau d'objets
 
-    if ((products.length >= 0) == false) {
+    if ((products.length >= 0) === false) {
         //Creer div dans la div cart
         var emptyCartAlert = document.getElementById("div");
         emptyCartAlert.className = "alert alert-danger";
@@ -53,6 +53,7 @@
                 }
             }
         }
+    )
 
         .catch(function () {
             console.error("Oops, an error occurred. Please contact alexandre@nitatemic.ovh");
