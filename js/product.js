@@ -15,6 +15,11 @@ fetch(apiUrl)
           i = j;
           break;
         }
+        //Afficher un message d'erreur si l'id n'est pas trouvé
+        else {
+          alert("Teddy not found");
+          break;
+        }
       }
 
     //Créer une div dans la div container
