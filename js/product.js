@@ -11,7 +11,7 @@ fetch(apiUrl)
     let i;
 
     //Find to which teddys belongs the id passed in parameter and store its number in i
-    for (let j = 0; j < teddys.length - 1; j++) {
+    for (let j = 0; j < teddys.length ; j++) {
       if (teddys[j]._id === id) {
         i = j;
         break;
