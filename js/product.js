@@ -127,4 +127,10 @@ fetch(apiUrl)
 
   .catch(function () {
     console.error('Oops, an error occurred. Please contact alexandre@nitatemic.ovh');
+    //Ajouter du html dans le container
+    let errorMsg = document.createElement('div');
+    errorMsg.className = "alert alert-danger";
+    errorMsg.role = "alert";
+    errorMsg.textContent = "Oops, an error occurred. Please contact alexandre@nitatemic.ovh";
+    document.getElementById("container").appendChild(errorMsg);
   });
