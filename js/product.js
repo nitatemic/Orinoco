@@ -4,13 +4,14 @@ fetch(apiUrl)
       return res.json();
     }
   })
+
   .then(function (teddys) {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get("id");
     let i;
 
     //Find to which teddys belongs the id passed in parameter and store its number in i
-    for (let j = 0; j < teddys.length; j++) {
+    for (let j = 0; j < teddys.length - 1; j++) {
       if (teddys[j]._id === id) {
         i = j;
         break;
@@ -134,3 +135,4 @@ fetch(apiUrl)
     errorMsg.textContent = "Oops, an error occurred. Please contact alexandre@nitatemic.ovh";
     document.getElementById("container").appendChild(errorMsg);
   });
+
