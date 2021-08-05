@@ -8,17 +8,24 @@ fetch(apiUrl)
     .then(function (teddys) {
 
         var products = [];
-            for (var i = 0; i < localStorage.length; i++) {
+            for (let i = 0; i < localStorage.length; i++) {
                 product = localStorage.key(i);
                 products.push(JSON.parse(localStorage.getItem(product)));
             }
             console.log(products); //Je recupere un tableau d'objets
 
+            console.log(teddys[0]._id); //Je recupere un tableau d'objets)
+
+            //Ajouter le nombre de produit dans la div numberOfItems
+            document.getElementById("numberOfItems").innerHTML = products.length;
+
         //Find to which teddys belongs the id passed in parameter and store its number in i
-        for (let i = 0; i < products.length - 1; i++) {
-            for(let j =0; i < teddys.length - 1; j++) {
+        for (let i = 0; i < products.length; i++) {
+            for(let j = 0; i < teddys.length; j++) {
                 if (products[i].id === teddys[j]._id) {
-                    console.log("coucou1");
+                  console.log(teddys[i]._id); //Je recupere un tableau d'objets)
+                  console.log(teddys.length); //Je recupere un tableau d'objets)]
+                  console.log("coucou1");
                 }
             }
         }
