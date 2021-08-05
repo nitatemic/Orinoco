@@ -8,19 +8,18 @@ fetch(apiUrl)
   .then(function (teddys) {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get("id");
-    let i;
+    let i = 0;
 
     //Find to which teddys belongs the id passed in parameter and store its number in i
-    for (let j = 0; j < teddys.length ; j++) {
+    for (let j = 0; j < teddys.length; j++) {
       if (teddys[j]._id === id) {
         i = j;
-        break;
+        console.log("coucou");
       }
-      //Show an error message if the id is not found
-      else {
-        alert("Teddy not found");
-        break;
-      }
+    }
+    //Show an error message if the id is not found
+    if (i === 0) {
+      alert("Teddy not found");
     }
 
     //Put the name of the teddie in the title of the page
@@ -100,7 +99,6 @@ fetch(apiUrl)
     submit.className = "btn btn-warning";
     //Ajouter un attribut onclick au bouton
     submit.onclick = function () {
-      // ! : J'arrive pas à ajouter le onclick au bouton
       getColor();
     };
     submit.textContent = "Ajouter au panier";
