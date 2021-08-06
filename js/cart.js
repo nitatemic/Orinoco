@@ -64,5 +64,4 @@ fetch(apiUrl)
 
     .catch(function () {
         console.error("Oops, an error occurred. Please contact alexandre@nitatemic.ovh");
-
     });
