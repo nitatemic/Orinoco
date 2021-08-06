@@ -8,7 +8,7 @@ fetch(apiUrl)
   .then(function (teddys) {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get("id");
-    let i = 0;
+    let i = -1;
 
     //Find to which teddys belongs the id passed in parameter and store its number in i
     for (let j = 0; j < teddys.length; j++) {
@@ -18,7 +18,7 @@ fetch(apiUrl)
       }
     }
     //Show an error message if the id is not found
-    if (i === 0) {
+    if (i === -1) {
       alert("Teddy not found");
     }
 
