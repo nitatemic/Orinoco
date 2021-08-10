@@ -7,8 +7,7 @@ fetch(apiUrl)
 
   .then(function (teddys) {
     //Je récupere le tableau "cart" stocké dans le localStorage
-    var cart = JSON.parse(localStorage.getItem('cart'));
-    console.log(cart);
+    let cart = JSON.parse(localStorage.getItem('cart'));
 
     //Si le localStorage ne contient pas de tableau "cart" stocké
     if (cart == null) {
@@ -18,10 +17,10 @@ fetch(apiUrl)
     else {
     //Ajouter le nombre de produit dans la div numberOfItems
     document.getElementById("numberOfItems").innerHTML = cart.length;
-    
+
     createUl("cartListUl", "list-group mb-3", "cartList");
     //Faire une boucle qui parcours le tableau "cart"
-    for (var i = 0; i < cart.length; i++) {
+    for (let i = 0; i < cart.length; i++) {
       showCartItem(teddys[i].name, cart[i].color, teddys[i].price / 100 + "€");
     }
     createLi(
@@ -42,10 +41,9 @@ fetch(apiUrl)
 
     function totalCalc(cart) {
       let total = 0;
-      for (var i = 0; i < cart.length; i++) {
+      for (let i = 0; i < cart.length; i++) {
         total += teddys[cart[i].i].price; //TODO : Trouver une autre méthode pour pouvoir la mettre en dehors du then
       }
-      console.log(total);
       return total / 100 + "€";
     }
     }
@@ -101,13 +99,4 @@ function createItem(nameItem, colorItem, priceItem) {
   span2.className = "text-muted";
   span2.innerHTML = priceItem;
   document.getElementById(nameItem + "Li").appendChild(span2);
-}
-
-function totalCalc(cart) {
-  let total = 0;
-  for (var i = 0; i < cart.length; i++) {
-    total += teddys[cart[i].i].price;
-  }
-  console.log(total);
-  return total;
 }
