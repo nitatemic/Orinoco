@@ -12,10 +12,15 @@ fetch(apiUrl)
       //Ajouter le nombre de produit dans la div numberOfItems
       document.getElementById("numberOfItems").innerHTML = cart.length;
 
+      createUl(cartListUl, cartListUl);
+
+
       //Creer une list ul dans la div cart
-      let ul1 = document.createElement("ul");
-      ul1.id = ("cartListUl");
-      document.getElementById("cartList").appendChild(ul1);
+      function createUl(ulId, ulParent) {
+        let ul1 = document.createElement("ul");
+      ul1.id = (ulId);
+      document.getElementById(ulParent).appendChild(ul1);
+      }
 
       //Find to which teddys belongs the id passed in parameter and store its number in i
       for (let i = 0; i < products.length; i++) {
@@ -59,3 +64,10 @@ fetch(apiUrl)
     .catch(function () {
         console.error("Oops, an error occurred. Please contact alexandre@nitatemic.ovh");
     });
+
+        //Creer une list ul dans la div cart
+      function createUl(ulId, ulParent) {
+        let ul1 = document.createElement("ul");
+      ul1.id = (ulId);
+      document.getElementById(ulParent).appendChild(ul1);
+      }
