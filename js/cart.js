@@ -12,15 +12,7 @@ fetch(apiUrl)
       //Ajouter le nombre de produit dans la div numberOfItems
       document.getElementById("numberOfItems").innerHTML = cart.length;
 
-      createUl(cartListUl, cartListUl);
-
-
-      //Creer une list ul dans la div cart
-      function createUl(ulId, ulParent) {
-        let ul1 = document.createElement("ul");
-      ul1.id = (ulId);
-      document.getElementById(ulParent).appendChild(ul1);
-      }
+      createUl("cartListUl", "cartList");
 
       //Find to which teddys belongs the id passed in parameter and store its number in i
       for (let i = 0; i < products.length; i++) {
@@ -68,6 +60,6 @@ fetch(apiUrl)
         //Creer une list ul dans la div cart
       function createUl(ulId, ulParent) {
         let ul1 = document.createElement("ul");
-      ul1.id = (ulId);
-      document.getElementById(ulParent).appendChild(ul1);
+        ul1.id = (ulId);
+        document.getElementById(ulParent).appendChild(ul1);
       }
