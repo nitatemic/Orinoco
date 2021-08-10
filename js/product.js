@@ -98,7 +98,8 @@ fetch(apiUrl)
     submit.type = "submit";
     submit.className = "btn btn-warning";
     //Ajouter un attribut onclick au bouton
-    submit.onclick = function () {
+    submit.onclick = function (e) {
+      e.preventDefault();
       getColor();
     };
     submit.textContent = "Ajouter au panier";
@@ -111,7 +112,7 @@ fetch(apiUrl)
     function getColor() {
       const d = new Date();
       const color = document.getElementById("colorschoise").value;
-
+ 
       const temp = {
         id: id,
         color: color,
