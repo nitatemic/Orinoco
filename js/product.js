@@ -14,7 +14,6 @@ fetch(apiUrl)
     for (let j = 0; j < teddys.length; j++) {
       if (teddys[j]._id === id) {
         i = j;
-        console.log("coucou");
       }
     }
     //Show an error message if the id is not found
@@ -100,30 +99,14 @@ fetch(apiUrl)
     //Ajouter un attribut onclick au bouton
     submit.onclick = function (e) {
       e.preventDefault();
-      getColor();
+      const color = document.getElementById("colorschoise").value;
+      getColor(id, color);
     };
     submit.textContent = "Ajouter au panier";
     form.appendChild(submit);
 
-    //Créer une fonction qui recupere la couleur choisie par l'utilisateur dans le select ainsi que l'id du teddy et la stocke dans un objet avec localStorage
-    //Cette fonction sera appelée par le button "Ajouter au panier"
 
-    //Fonction qui recupere la couleur choisie par l'utilisateur dans le select ainsi que l'id du teddy et la stocke dans un string avec localStorage
-    function getColor() {
-      const d = new Date();
-      const color = document.getElementById("colorschoise").value;
- 
-      const temp = {
-        id: id,
-        color: color,
-      };
-
-      //Ajouter l'objet avec les informations de l'utilisateur dans la variable localStorage
-      localStorage.setItem(d.getTime(), JSON.stringify(temp)); //J'utilise d.getTime pour générer un nom unique
-    }
   })
-
-
 
   .catch(function () {
     console.error('Oops, an error occurred. Please contact alexandre@nitatemic.ovh');
@@ -135,3 +118,18 @@ fetch(apiUrl)
     document.getElementById("container").appendChild(errorMsg);
   });
 
+    //Créer une fonction qui recupere la couleur choisie par l'utilisateur dans le select ainsi que l'id du teddy et la stocke dans un objet avec localStorage
+    //Cette fonction sera appelée par le button "Ajouter au panier"
+
+    //Fonction qui recupere la couleur choisie par l'utilisateur dans le select ainsi que l'id du teddy et la stocke dans un string avec localStorage
+    function getColor(getColorId, getColorColor) {
+      const d = new Date();
+
+      const temp = {
+        id: getColorId,
+        color: getColorColor,
+      };
+
+      //Ajouter l'objet avec les informations de l'utilisateur dans la variable localStorage
+      localStorage.setItem(d.getTime(), JSON.stringify(temp)); //J'utilise d.getTime pour générer un nom unique
+    }
