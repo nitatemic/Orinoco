@@ -14,35 +14,21 @@ fetch(apiUrl)
     if (cart == null) {
       //Ajouter le nombre de produit dans la div numberOfItems
       document.getElementById("numberOfItems").innerHTML = 0;
-      //Creer div dans la div cart
-      let emptyCartAlert = document.getElementById("div");
-      emptyCartAlert.className = "alert alert-danger";
-      emptyCartAlert.role = "alert";
-      document.getElementById("CartList").appendChild(emptyCartAlert);
-
-      //Creer un h4 dans la div emptyCartAlert
-      let emptyCartAlertHeading = document.createElement("h4");
-      emptyCartAlertHeading.innerHTML = "Votre panier est vide";
-      emptyCartAlert.appendChild(emptyCartAlertHeading);
-
-      //Creer un p dans la div emptyCartAlert
-      let emptyCartAlertText = document.createElement("p");
-      emptyCartAlertText.innerHTML =
-        'Vous pouvez ajouter des produits dans votre panier en cliquant sur le bouton "Ajouter au panier"';
-      emptyCartAlert.appendChild(emptyCartAlertText);
     }
     else {
     //Ajouter le nombre de produit dans la div numberOfItems
     document.getElementById("numberOfItems").innerHTML = cart.length;
-    }
-
-
+    
     createUl("cartListUl", "list-group mb-3", "cartList");
     //Faire une boucle qui parcours le tableau "cart"
     for (var i = 0; i < cart.length; i++) {
-      showCartItem(teddys[i].name, cart[i].color, teddys[i].price/100 + "€");
+      showCartItem(teddys[i].name, cart[i].color, teddys[i].price / 100 + "€");
     }
-    createLi("totalLi" , "list-group-item d-flex justify-content-between", "cartListUl");
+    createLi(
+      "totalLi",
+      "list-group-item d-flex justify-content-between",
+      "cartListUl"
+    );
 
     //Creer un span dans la li
     let span3 = document.createElement("span");
@@ -60,8 +46,12 @@ fetch(apiUrl)
         total += teddys[cart[i].i].price; //TODO : Trouver une autre méthode pour pouvoir la mettre en dehors du then
       }
       console.log(total);
-      return total /100 + "€";
+      return total / 100 + "€";
     }
+    }
+
+
+    
     })
 
 
