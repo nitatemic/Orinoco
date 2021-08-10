@@ -6,17 +6,11 @@ fetch(apiUrl)
     })
 
     .then(function (teddys) {
-      var products = [];
-      for (let i = 0; i < localStorage.length; i++) {
-        product = localStorage.key(i);
-        products.push(JSON.parse(localStorage.getItem(product)));
-      }
-      console.log(products); //Je recupere un tableau d'objets
-
-      console.log(teddys[0]._id); //Je recupere un tableau d'objets)
+      //Je récupere le tableau "cart" stocké dans le localStorage
+      var cart = JSON.parse(localStorage.getItem('cart'));
 
       //Ajouter le nombre de produit dans la div numberOfItems
-      document.getElementById("numberOfItems").innerHTML = products.length;
+      document.getElementById("numberOfItems").innerHTML = cart.length;
 
       //Creer une list ul dans la div cart
       let ul1 = document.createElement("ul");
