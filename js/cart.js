@@ -10,7 +10,7 @@ fetch(apiUrl)
     let cart = JSON.parse(localStorage.getItem('cart'));
 
     //Si le localStorage ne contient pas de tableau "cart" stocké
-    if (cart == null) {
+    if (cart === null) {
       //Ajouter le nombre de produit dans la div numberOfItems
       document.getElementById("numberOfItems").innerHTML = 0;
     }
