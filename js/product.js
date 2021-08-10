@@ -101,7 +101,7 @@ fetch(apiUrl)
       e.preventDefault();
       const color = document.getElementById("colorschoise").value;
       //TODO : Faire un test pour vérifier les données qui vont être envoyées
-      getColor(id, color);
+      getColor(id, color, i);
     };
     submit.textContent = "Ajouter au panier";
     form.appendChild(submit);
@@ -123,16 +123,13 @@ fetch(apiUrl)
 //Cette fonction sera appelée par le button "Ajouter au panier"
 
 //Fonction qui recupere la couleur choisie par l'utilisateur dans le select ainsi que l'id du teddy et la stocke dans un string avec localStorage
-function getColor(getColorId, getColorColor) {
-  //const d = new Date();
+function getColor(getColorId, getColorColor, iTeddys) {
 
   const temp = {
     id: getColorId,
     color: getColorColor,
+    i : iTeddys
   };
-
-  //Ajouter l'objet avec les informations de l'utilisateur dans la variable localStorage
-  //localStorage.setItem(d.getTime(), JSON.stringify(temp)); //J'utilise d.getTime pour générer un nom unique
 
   //Si le localStorage ne contient pas de tableau appelée "cart", on l'initialise.
   if (localStorage.getItem("cart") === null) {
