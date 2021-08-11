@@ -23,7 +23,11 @@ fetch(apiUrl)
       "cartList");
       //Faire une boucle qui parcours le tableau "cart"
       for (let i = 0; i < cart.length; i++) {
-        showCartItem(teddys[i].name, cart[i].color, teddys[i].price / 100 + "€");
+        showCartItem(
+          teddys[cart[i].i].name,
+          cart[i].color,
+          teddys[cart[i].i].price / 100 + "€"
+        );
       }
       createLi(
         "totalLi",
