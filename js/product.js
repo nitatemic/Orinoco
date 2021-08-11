@@ -43,8 +43,8 @@ fetch(apiUrl)
     let teddyImg = document.createElement("img");
     teddyImg.src = teddys[i].imageUrl;
     teddyImg.className = "img-fluid rounded";
-    teddyImg.width = "400";
-    teddyImg.height = "500";
+    teddyImg.width = 400;
+    teddyImg.height = 500;
     teddyImgContainer.appendChild(teddyImg);
 
     //Create a div in the container div

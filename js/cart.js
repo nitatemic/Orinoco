@@ -12,7 +12,7 @@ fetch(apiUrl)
     //Si le localStorage ne contient pas de tableau "cart" stocké
     if (cart == null) {
       //Ajouter le nombre de produit dans la div numberOfItems
-      document.getElementById("numberOfItems").innerHTML = 0;
+      document.getElementById("numberOfItems").innerHTML = "0";
     }
     else {
     //Ajouter le nombre de produit dans la div numberOfItems
@@ -47,9 +47,6 @@ fetch(apiUrl)
       return total / 100 + "€";
     }
     }
-
-
-    
     })
 
 
