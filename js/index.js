@@ -39,7 +39,6 @@ fetch (apiUrl)
             `;
             //Ajouter la div dans la dernière div containerFor2
             document.getElementById("containerFor2" + j).appendChild(div);
-            console.log(i);
         }
     })
   .catch(function() {
