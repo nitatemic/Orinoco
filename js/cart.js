@@ -15,44 +15,34 @@ fetch(apiUrl)
       document.getElementById("numberOfItems").innerHTML = 0;
     }
     else {
-    //Ajouter le nombre de produit dans la div numberOfItems
-    document.getElementById("numberOfItems").innerHTML = cart.length;
+      //Ajouter le nombre de produit dans la div numberOfItems
+      document.getElementById("numberOfItems").innerHTML = cart.length;
 
-    createUl("cartListUl", "list-group mb-3", "cartList");
-    //Faire une boucle qui parcours le tableau "cart"
-    for (let i = 0; i < cart.length; i++) {
-      showCartItem(teddys[i].name, cart[i].color, teddys[i].price / 100 + "€");
-    }
-    createLi(
-      "totalLi",
-      "list-group-item d-flex justify-content-between",
-      "cartListUl"
-    );
-
-    //Creer un span dans la li
-    let span3 = document.createElement("span");
-    span3.innerHTML = "Total (EUR)";
-    document.getElementById("totalLi").appendChild(span3);
-
-    //Creer un strong dans la li
-    let strong4 = document.createElement("strong");
-    strong4.innerHTML = totalCalc(cart);
-    document.getElementById("totalLi").appendChild(strong4);
-
-    function totalCalc(cart) {
-      let total = 0;
+      createUl("cartListUl",
+      "list-group mb-3",
+      "cartList");
+      //Faire une boucle qui parcours le tableau "cart"
       for (let i = 0; i < cart.length; i++) {
-        total += teddys[cart[i].i].price; //TODO : Trouver une autre méthode pour pouvoir la mettre en dehors du then
+        showCartItem(teddys[i].name, cart[i].color, teddys[i].price / 100 + "€");
       }
-      return total / 100 + "€";
+      createLi(
+        "totalLi",
+        "list-group-item d-flex justify-content-between",
+        "cartListUl"
+      );
+
+      //Creer un span dans la li
+      let span3 = document.createElement("span");
+      span3.innerHTML = "Total (EUR)";
+      document.getElementById("totalLi").appendChild(span3);
+
+      //Creer un strong dans la li
+      let strong4 = document.createElement("strong");
+      strong4.innerHTML = totalCalc(cart, teddys);
+      document.getElementById("totalLi").appendChild(strong4);
+
     }
-    }
-
-
-    
-    })
-
-
+ })
 
   .catch(function () {
       console.error("Oops, an error occurred. Please contact alexandre@nitatemic.ovh");
@@ -99,4 +89,12 @@ function createItem(nameItem, colorItem, priceItem) {
   span2.className = "text-muted";
   span2.innerHTML = priceItem;
   document.getElementById(nameItem + "Li").appendChild(span2);
+}
+
+function totalCalc(cart, teddys) {
+  let total = 0;
+  for (let i = 0; i < cart.length; i++) {
+    total += teddys[cart[i].i].price; 
+  }
+  return total / 100 + "€";
 }

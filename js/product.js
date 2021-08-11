@@ -142,7 +142,4 @@ function getColor(getColorId, getColorColor, iTeddys) {
   tempCart.push(temp);
   //On met à jour le localStorage avec le nouveau tableau
   localStorage.setItem("cart", JSON.stringify(tempCart));
-
-
-
 }
