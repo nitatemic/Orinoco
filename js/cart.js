@@ -26,7 +26,8 @@ fetch(apiUrl)
         showCartItem(
           teddys[cart[i].i].name,
           cart[i].color,
-          teddys[cart[i].i].price / 100 + "€"
+          teddys[cart[i].i].price / 100 + "€",
+          cart.indexOf(cart[i])
         );
       }
       createLi(
@@ -61,9 +62,9 @@ function createUl(ulId, ulClass, ulParent) {
 }
 
 //Fonction qui affiche un produit du panier
-function showCartItem(nameItem, colorItem, priceItem) {
-  createLi(nameItem + "Li", "list-group-item d-flex justify-content-between lh-sm", "cartListUl");
-  createItem(nameItem, colorItem, priceItem);
+function showCartItem(nameItem, colorItem, priceItem, i) {
+  createLi(nameItem + "Li" + i, "list-group-item d-flex justify-content-between lh-sm", "cartListUl");
+  createItem(nameItem, colorItem, priceItem, i);
 }
 
 function createLi(liId, liClass, liParent) {
@@ -73,10 +74,10 @@ function createLi(liId, liClass, liParent) {
   document.getElementById(liParent).appendChild(li1);
 }
 
-function createItem(nameItem, colorItem, priceItem) {
+function createItem(nameItem, colorItem, priceItem, i) {
   let div1 = document.createElement("div");
   //Ajouter div1 dans le li
-  document.getElementById(nameItem + "Li").appendChild(div1);
+  document.getElementById(nameItem + "Li" + i).appendChild(div1);
   //Ajouter un h6 dans la div1
   let h61 = document.createElement("h6");
   h61.innerHTML = nameItem;
@@ -92,7 +93,7 @@ function createItem(nameItem, colorItem, priceItem) {
   let span2 = document.createElement("span");
   span2.className = "text-muted";
   span2.innerHTML = priceItem;
-  document.getElementById(nameItem + "Li").appendChild(span2);
+  document.getElementById(nameItem + "Li"+ i).appendChild(span2);
 }
 
 function totalCalc(cart, teddys) {
