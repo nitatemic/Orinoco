@@ -3,9 +3,7 @@ import {
   createUl,
   showCartItem,
   createLi,
-  createItem,
   totalCalc,
-  showTeddies,
 } from "./functions.js";
 
 
