@@ -1,4 +1,14 @@
 module.exports = {
+  entry: {
+    index: "./src/index/index.js",
+    product: "./src/product/index.js",
+    cart: "./src/cart/index.js",
+    checkout: "./src/checkout/index.js",
+  },
+  output: {
+    filename: "[name].js",
+    path: __dirname + "/dist",
+  },
   module: {
     rules: [
       {
