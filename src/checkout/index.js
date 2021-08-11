@@ -1,26 +1,24 @@
+const apiUrl = "https://orinoco-nitatemic.herokuapp.com/api/teddies";
 fetch(apiUrl)
   .then(function (res) {
-      if (res.ok) {
+    if (res.ok) {
       return res.json();
-      }
+    }
   })
 
   .then(function (teddys) {
     //Je récupere le tableau "cart" stocké dans le localStorage
-    let cart = JSON.parse(localStorage.getItem('cart'));
+    let cart = JSON.parse(localStorage.getItem("cart"));
 
     //Si le localStorage ne contient pas de tableau "cart" stocké
     if (cart === null) {
       //Ajouter le nombre de produit dans la div numberOfItems
       document.getElementById("numberOfItems").innerHTML = 0;
-    }
-    else {
+    } else {
       //Ajouter le nombre de produit dans la div numberOfItems
       document.getElementById("numberOfItems").innerHTML = cart.length; //TODO : En faire une fonction
 
-      createUl("cartListUl",
-      "list-group mb-3",
-      "cartList");
+      createUl("cartListUl", "list-group mb-3", "cartList");
       //Faire une boucle qui parcours le tableau "cart"
       for (let i = 0; i < cart.length; i++) {
         showCartItem(
@@ -45,11 +43,11 @@ fetch(apiUrl)
       let strong4 = document.createElement("strong");
       strong4.innerHTML = totalCalc(cart, teddys);
       document.getElementById("totalLi").appendChild(strong4);
-
     }
- })
+  })
 
   .catch(function () {
-      console.error("Oops, an error occurred. Please contact alexandre@nitatemic.ovh");
+    console.error(
+      "Oops, an error occurred. Please contact alexandre@nitatemic.ovh"
+    );
   });
-
