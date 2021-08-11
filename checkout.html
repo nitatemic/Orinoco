@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css"
+      integrity="sha512-usVBAd66/NpVNfBge19gws2j6JZinnca12rAe2l+d+QkLU9fiG02O1X8Q6hepIpr/EYKZvKx/I9WsnujJuOmBA=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Paiement | Orinoco</title>
+  </head>
+
+  <body class="bg-light">
+    <header class="p-3 bg-dark text-white">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="index.html" class="d-flex align-items-center mb- mb-lg-0 text-white text-decoration-none">
+          <img class="bi me-2 rounded" width="64" height="64" role="img" alt="Logo de Orinco" aria-label="Orinco"
+            src="./img/logo.jpg">
+        </a>
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        </ul>
+        <div class="text-end">
+          <a type="button" class="btn btn-warning" href="./cart.html">Panier <lord-icon
+              src="https://cdn.lordicon.com/slkvcfos.json" trigger="hover" colors="primary:#121331,secondary:#08a88a"
+              stroke="60" style="width:25px;height:25px">
+            </lord-icon></a>
+        </div>
+      </div>
+    </header>
+  <div class="container">
+  <main>
+    
+    <div class="py-5 text-center">
+      
+      <h2>Page de Paiement</h2>
+      <p class="lead">Ceci est la dernière étape avant de pouvoir profiter de vos achats.</p>
+    </div>
+    <div class="row g-5">
+      <div class="col-md-5 col-lg-4 order-md-last">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-primary">Votre panier</span>
+          <span class="badge bg-primary rounded-pill" id="numberOfItems"></span>
+        </h4>
+      </div>
+      <div class="col-md-7 col-lg-8">
+        <h4 class="mb-3">Adresse de facturation</h4>
+        <form class="needs-validation" novalidate>
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="firstName" class="form-label">Prenom</label>
+              <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Prénom valide est requis.
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="lastName" class="form-label">Nom de famille</label>
+              <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Un nom de famille valide est requis.
+              </div>
+            </div>
+
+
+            <div class="col-12">
+              <label for="email" class="form-label">Email <span class="text-muted"></span></label>
+              <input type="email" class="form-control" id="email" placeholder="sherlock.holmes@example.com" required>
+              <div class="invalid-feedback">
+                Veuillez saisir une adresse mail valide pour recevoir les mises à jour des expéditions.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="address" class="form-label">Adresse</label>
+              <input type="text" class="form-control" id="address" placeholder="221B Baker Street" required>
+              <div class="invalid-feedback">
+                Veuillez saisir votre adresse de livraison.
+              </div>
+            </div>
+
+            <div class="col-md-5">
+              <label for="city" class="form-label">Ville</label>
+              <input type="text" class="form-control" id="city" placeholder="Londres" required>
+              <div class="invalid-feedback">
+                Veuillez sélectionner une ville valide.
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <button class="w-100 btn btn-primary btn-lg" type="submit">Commander</button>
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js"
+      integrity="sha512-72WD92hLs7T5FAXn3vkNZflWG6pglUDDpm87TeQmfSg8KnrymL2G30R7as4FmTwhgu9H7eSzDCX3mjitSecKnw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.lordicon.com/libs/frhvbuzj/lord-icon-2.0.2.js" crossorigin="anonymous"
+      referrerpolicy="no-referrer"></script>
+    <script src="./dist/checkout.js"></script>
+  </body>
+</html>
