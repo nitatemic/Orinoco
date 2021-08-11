@@ -53,6 +53,4 @@ function totalCalc(cart, teddys) {
   return total / 100 + "€";
 }
 
-}
-
 export { createUl, showCartItem, createLi, totalCalc };
