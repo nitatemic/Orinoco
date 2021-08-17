@@ -1,4 +1,4 @@
-const apiUrl = "https://orinoco-nitatemic.herokuapp.com/api/teddies";
+import {apiUrl} from "../global.js";    //TODO : Mettre dans les autres fichiers
 import {
   createUl,
   showCartItem,
