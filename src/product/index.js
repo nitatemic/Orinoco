@@ -93,7 +93,7 @@ fetch(apiUrlId)
       e.preventDefault();
       const color = document.getElementById("colorschoise").value;
       //TODO : Faire un test pour vérifier les données qui vont être envoyées
-      getColor(id, color); //TODO : Le i pose problème
+      getColor(id, color);
     };
     submit.textContent = "Ajouter au panier";
     form.appendChild(submit);

@@ -1,11 +1,17 @@
-import {apiUrl} from "../global.js";    //TODO : Mettre dans les autres fichiers
+import {apiUrl} from "../global.js";
 import {
   createUl,
   showCartItem,
   createLi,
   totalCalc,
+  showNumberOfItems,
 } from "./functions.js";
 
+    //Je récupere le tableau "cart" stocké dans le localStorage
+    let cart = JSON.parse(localStorage.getItem("cart"));
+
+    //Ajouter le nombre de produit dans la div numberOfItems
+    showNumberOfItems(cart, "numberOfItems");
 
 fetch(apiUrl)
   .then(function (res) {
@@ -15,16 +21,8 @@ fetch(apiUrl)
   })
 
   .then(function (teddys) {
-    //Je récupere le tableau "cart" stocké dans le localStorage
-    let cart = JSON.parse(localStorage.getItem("cart"));
 
-    //Si le localStorage ne contient pas de tableau "cart" stocké
-    if (cart === null) {
-      //Ajouter le nombre de produit dans la div numberOfItems
-      document.getElementById("numberOfItems").innerHTML = 0;
-    } else {
-      //Ajouter le nombre de produit dans la div numberOfItems
-      document.getElementById("numberOfItems").innerHTML = cart.length; //TODO : En faire une fonction
+
 
       createUl("cartListUl", "list-group mb-3", "cartList");
       //Faire une boucle qui parcours le tableau "cart"
