@@ -53,4 +53,20 @@ function totalCalc(cart, teddys) {
   return total / 100 + "€";
 }
 
-export { createUl, showCartItem, createLi, totalCalc };
+//fonction qui recupère le nombre d'article dans le panier
+function getCartLength(cart) {
+  if (cart === null) {
+    return 0;
+  } 
+  else {
+    return cart.length;
+  }
+}
+
+//Fonction qui ajoute le nombre d'article dans le panier dans le compteur
+function showNumberOfItems(cart, idOfSpan) {
+document.getElementById(idOfSpan).innerHTML = getCartLength(cart);
+
+}
+
+export { createUl, showCartItem, createLi, totalCalc, showNumberOfItems };
