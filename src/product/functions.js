@@ -2,11 +2,10 @@
 //Cette fonction sera appelée par le button "Ajouter au panier"
 
 //Fonction qui recupere la couleur choisie par l'utilisateur dans le select ainsi que l'id du teddy et la stocke dans un string avec localStorage
-function getColor(getColorId, getColorColor, iTeddys) {
+function getColor(getColorId, getColorColor) {
   const temp = {
     id: getColorId,
     color: getColorColor,
-    i: iTeddys,
   };
 
   //Si le localStorage ne contient pas de tableau appelée "cart", on l'initialise.
