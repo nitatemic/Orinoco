@@ -48,6 +48,7 @@ function createItem(nameItem, colorItem, priceItem, indexInCart) {
 
 //Fonction totalCalc qui calcule de total du panier
 //Le prix des articles doit être récuperer dans la fonction getPrice
+// ! Ne fonctionne pas et pas fini
 function totalCalc(cart) {
   let total = 0;
   for (let i = 0; i < cart.length; i++) {
@@ -70,6 +71,11 @@ function getCartLength(cart) {
 //Fonction qui ajoute le nombre d'article dans le panier dans le compteur
 function showNumberOfItems(cart, idOfSpan) {
   document.getElementById(idOfSpan).innerHTML = getCartLength(cart);
+}
+
+//fonction qui recupère les information du client dans le formulaire et les stocke dans un tableau
+function sendUserData(){
+    
 }
 
 export { createUl, showCartItem, createLi, totalCalc, showNumberOfItems };
