@@ -4,8 +4,6 @@
   "description": "",
   "main": "",
   "scripts": {
-    "sass": "sass ./sass/main.scss:./css/style.css -w --style compressed",
-    "prefix": "postcss ./css/style.css --use autoprefixer -d./css/prefixed/",
     "build": "webpack",
     "watch": "webpack --watch"
   },

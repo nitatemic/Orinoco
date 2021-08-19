@@ -1,4 +1,3 @@
-import { apiUrl } from "../global.js";
 //Creer une list ul dans la div cart
 function createUl(ulId, ulClass, ulParent) {
   let ul1 = document.createElement("ul");
@@ -8,13 +7,13 @@ function createUl(ulId, ulClass, ulParent) {
 }
 
 //Fonction qui affiche un produit du panier
-function showCartItem(nameItem, colorItem, priceItem, indexInCart) {
+function showCartItem(nameItem, colorItem, priceItem, i) {
   createLi(
-    nameItem + "Li" + indexInCart,
+    nameItem + "Li" + i,
     "list-group-item d-flex justify-content-between lh-sm",
     "cartListUl"
   );
-  createItem(nameItem, colorItem, priceItem, indexInCart);
+  createItem(nameItem, colorItem, priceItem, i);
 }
 
 function createLi(liId, liClass, liParent) {
@@ -24,10 +23,10 @@ function createLi(liId, liClass, liParent) {
   document.getElementById(liParent).appendChild(li1);
 }
 
-function createItem(nameItem, colorItem, priceItem, indexInCart) {
+function createItem(nameItem, colorItem, priceItem, i) {
   let div1 = document.createElement("div");
   //Ajouter div1 dans le li
-  document.getElementById(nameItem + "Li" + indexInCart).appendChild(div1);
+  document.getElementById(nameItem + "Li" + i).appendChild(div1);
   //Ajouter un h6 dans la div1
   let h61 = document.createElement("h6");
   h61.innerHTML = nameItem;
@@ -43,19 +42,16 @@ function createItem(nameItem, colorItem, priceItem, indexInCart) {
   let span2 = document.createElement("span");
   span2.className = "text-muted";
   span2.innerHTML = priceItem;
-  document.getElementById(nameItem + "Li" + indexInCart).appendChild(span2);
+  document.getElementById(nameItem + "Li" + i).appendChild(span2);
 }
 
-//Fonction totalCalc qui calcule de total du panier
-//Le prix des articles doit être récuperer dans la fonction getPrice
-function totalCalc(cart) {
+function totalCalc(cart, teddys) {
   let total = 0;
   for (let i = 0; i < cart.length; i++) {
-    fetch(apiUrl + "/" + id).then(function (res) {total += res.price;});
-    console.log(total);
+    total += teddys[cart[i].i].price;
   }
+  return total / 100 + "€";
 }
-
 
 //fonction qui recupère le nombre d'article dans le panier
 function getCartLength(cart) {

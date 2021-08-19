@@ -15,7 +15,7 @@ showNumberOfItems(cart, "numberOfItems");
 
 createUl("cartListUl", "list-group mb-3", "cartList");
 
-for (let i = 0; i < cart.length; i++) {
+for (let i = 0; i < cart.length - 1; i++) {
   let id = cart[i].id;
   fetch(apiUrl + "/" + id)
     .then(function (res) {
@@ -59,5 +59,6 @@ document.getElementById("totalLi").appendChild(strong4);
 let btnSubmit = document.getElementById("btnCommander");
 btnSubmit.onclick = function(e) {
   e.preventDefault();
-  
+  let userData = new FormData(document.getElementById("userData"));
+  console.log(userData);
 }
