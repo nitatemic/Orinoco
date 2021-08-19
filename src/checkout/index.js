@@ -55,3 +55,9 @@ document.getElementById("totalLi").appendChild(span3);
 let strong4 = document.createElement("strong");
 strong4.innerHTML = totalCalc(cart);
 document.getElementById("totalLi").appendChild(strong4);
+
+let btnSubmit = document.getElementById("btnCommander");
+btnSubmit.onclick = function(e) {
+  e.preventDefault();
+  
+}

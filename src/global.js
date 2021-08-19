@@ -1,1 +1,1 @@
-export const apiUrl = "https://orinoco-nitatemic.herokuapp.com/api/teddies";
+export const apiUrl = "https://backorinoco.nitatemic.ovh/api/teddies";
