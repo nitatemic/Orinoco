@@ -15,7 +15,7 @@ showNumberOfItems(cart, "numberOfItems");
 
 createUl("cartListUl", "list-group mb-3", "cartList");
 
-for (let i = 0; i < cart.length - 1; i++) {
+for (let i = 0; i < cart.length; i++) {
   let id = cart[i].id;
   fetch(apiUrl + "/" + id)
     .then(function (res) {
@@ -53,7 +53,7 @@ document.getElementById("totalLi").appendChild(span3);
 
 //Creer un strong dans la li
 let strong4 = document.createElement("strong");
-strong4.innerHTML = totalCalc(cart);
+//strong4.innerHTML = totalCalc(cart); //TODO : Faire fonctionner cette fonction !
 document.getElementById("totalLi").appendChild(strong4);
 
 let btnSubmit = document.getElementById("btnCommander");
