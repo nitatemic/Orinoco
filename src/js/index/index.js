@@ -2,7 +2,7 @@ import { apiUrl } from "../global.js";
 import {
   showTeddies,
 } from "./functions.js";
-import "../sass/main.scss";
+import "../../sass/main.scss";
 fetch(apiUrl)
   .then(function (res) {
     if (res.ok) {

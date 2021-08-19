@@ -1,9 +1,8 @@
 module.exports = {
   entry: {
-    index: "./src/index/index.js",
-    product: "./src/product/index.js",
-    cart: "./src/cart/index.js",
-    checkout: "./src/checkout/index.js",
+    index: "./src/js/index/index.js",
+    product: "./src/js/product/index.js",
+    checkout: "./src/js/checkout/index.js",
   },
   output: {
     filename: "[name].js",
