@@ -51,11 +51,12 @@ function createItem(nameItem, colorItem, priceItem, indexInCart) {
 function totalCalc(cart) {
   let total = 0;
   for (let i = 0; i < cart.length; i++) {
-    fetch(apiUrl + "/" + id).then(function (res) {total += res.price;});
+    fetch(apiUrl + "/" + id).then(function (res) {
+      total += res.price;
+    });
     console.log(total);
   }
 }
-
 
 //fonction qui recupère le nombre d'article dans le panier
 function getCartLength(cart) {
