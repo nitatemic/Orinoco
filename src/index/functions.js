@@ -16,6 +16,8 @@ function showTeddies(teddys) {
             //Creer une div dans la dernière div créée
             let div = document.createElement("div");
             div.className = "col-md-6";
+            let imgUrlSecure = teddy.imageUrl;
+            imgUrlSecure = imgUrlSecure.replace(/^http:\/\//i, "https://");
             div.innerHTML +=
               `
                 <a class="teddylink" href="./product.html?id=${teddy._id}" >
@@ -26,7 +28,7 @@ function showTeddies(teddys) {
                             </div>
                             <p class="card-text mb-auto">${teddy.description}</p>
                             <div class ="col-auto d-none d-lg-block" id="teddy__0__img">
-                                <img src="${teddy.imageUrl}" alt="${teddy.name}" class="img-fluid rounded"  width="200" height="250" role="img" aria-label="Ours en peluche fait main">
+                                <img src="${imgUrlSecure}" alt="${teddy.name}" class="img-fluid rounded"  width="200" height="250" role="img" aria-label="Ours en peluche fait main">
                             </div>
                         </div>
                     </div>
