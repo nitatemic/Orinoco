@@ -38,17 +38,18 @@ let btnSubmit = document.getElementById("btnCommander");
 btnSubmit.onclick = function (e) {
   e.preventDefault();
   let formData = new FormData(document.querySelector("form"));
-  let userData = Object.create({});
-  userData.lastName = formData.get("lastName");
-  userData.firstName = formData.get("firstName");
-  userData.email = formData.get("email");
-  userData.address = formData.get("address");
-  userData.city = formData.get("city");
+  let contact = Object.create({});
+  contact.lastName = formData.get("lastName");
+  contact.firstName = formData.get("firstName");
+  contact.email = formData.get("email");
+  contact.address = formData.get("address");
+  contact.city = formData.get("city");
 
-  console.log(userData);
-  let request = JSON.stringify(userData) + JSON.stringify(cart);
-  
-//Faire une requete POST à l'api qui envoie request
+let produits = cart;
+console.log(produits);
+  let request = JSON.stringify(contact) + JSON.stringify(produits);
+  console.log(request);
+//Faire une requete POST à l'api qui envoie request //J'ai une erreur 400 Bad request
   fetch(apiUrl + "/order", {
     method: "POST",
     body: request,
