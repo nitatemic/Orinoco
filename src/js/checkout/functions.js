@@ -45,14 +45,6 @@ function createItem(nameItem, colorItem, priceItem, i) {
   document.getElementById(nameItem + "Li" + i).appendChild(span2);
 }
 
-function totalCalc(cart, teddys) {
-  let total = 0;
-  for (let i = 0; i < cart.length; i++) {
-    total += teddys[cart[i].i].price;
-  }
-  return total / 100 + "€";
-}
-
 //fonction qui recupère le nombre d'article dans le panier
 function getCartLength(cart) {
   if (cart === null) {
@@ -67,4 +59,4 @@ function showNumberOfItems(cart, idOfSpan) {
   document.getElementById(idOfSpan).innerHTML = getCartLength(cart);
 }
 
-export { createUl, showCartItem, createLi, totalCalc, showNumberOfItems };
+export { createUl, showCartItem, createLi, showNumberOfItems };
