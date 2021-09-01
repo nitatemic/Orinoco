@@ -35,7 +35,7 @@ document.getElementById("totalLi").appendChild(strong4);
 
 
 let btnSubmit = document.getElementById("btnCommander");
-btnSubmit.addEventListener("click") = function (e) {
+btnSubmit.onclick = function (e) {
   e.preventDefault();
   let formData = new FormData(document.querySelector("form"));
   let contact = Object.create({});
@@ -45,21 +45,25 @@ btnSubmit.addEventListener("click") = function (e) {
   contact.address = formData.get("address");
   contact.city = formData.get("city");
 
-  let request = {contact, products:cart.map(item => item.id)};
+let produits = cart;
+console.log(produits);
+  let request = JSON.stringify(contact) + JSON.stringify(produits);
   console.log(request);
-//Faire une requete POST à l'api qui envoie request
+//Faire une requete POST à l'api qui envoie request //J'ai une erreur 400 Bad request
   fetch(apiUrl + "/order", {
     method: "POST",
-    body: JSON.stringify(request),
+    body: request,
     headers: {
       "Content-Type": "application/json",
     },
 }).then(response => {
-    return response.json(); //TODO : Faire un if pour les 2xx
-}).then(orderApi => {
-  console.log("order",orderApi);
-  });
+  if (response.status === 200) {
+    console.log(response.status);
+  }
+});
 };
+
+
 
 
 async function generateContentFromCart(){
