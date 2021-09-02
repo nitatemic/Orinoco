@@ -59,4 +59,16 @@ function showNumberOfItems(cart, idOfSpan) {
   document.getElementById(idOfSpan).innerHTML = getCartLength(cart);
 }
 
-export { createUl, showCartItem, createLi, showNumberOfItems };
+/* ------------ Fonction qui vérifie l'adresse mail ------------ */
+function checkMail(mail) {
+  let regex =
+    /^([a-z0-9]+(?:[._-][a-z0-9]+)*)@([a-z0-9]+(?:[.-][a-z0-9]+)*\.[a-z]{2,})$/i;
+  if (regex.test(mail)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+/* ------------ Fin fonction qui vérifie l'adresse mail ------------ */
+
+export { createUl, showCartItem, createLi, showNumberOfItems, checkMail };
