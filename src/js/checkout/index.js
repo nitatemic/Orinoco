@@ -4,6 +4,7 @@ import {
   showCartItem,
   createLi,
   showNumberOfItems,
+  checkMail,
 } from "./functions.js";
 
 //Je récupere le tableau "cart" stocké dans le localStorage
@@ -38,27 +39,39 @@ let btnSubmit = document.getElementById("btnCommander");
 btnSubmit.onclick = function (e) {
   e.preventDefault();
   let formData = new FormData(document.querySelector("form"));
-  let contact = Object.create({});
-  contact.lastName = formData.get("lastName");
-  contact.firstName = formData.get("firstName");
-  contact.email = formData.get("email");
-  contact.address = formData.get("address");
-  contact.city = formData.get("city");
+  if (checkMail(formData.get("email")) === true) {
 
-  let request = {contact, products:cart.map(item => item.id)};
-  console.log(request);
-//Faire une requete POST à l'api qui envoie request
-  fetch(apiUrl + "/order", {
-    method: "POST",
-    body: JSON.stringify(request),
-    headers: {
-      "Content-Type": "application/json",
-    },
-}).then(response => {
-    return response.json(); //TODO : Faire un if pour les 2xx
-}).then(orderApi => {
-  console.log("order",orderApi);
-  });
+    let contact = Object.create({});
+    contact.lastName = formData.get("lastName");
+    contact.firstName = formData.get("firstName");
+    contact.email = formData.get("email");
+    contact.address = formData.get("address");
+    contact.city = formData.get("city");
+
+    let request = { contact, products: cart.map((item) => item.id) };
+    console.log(request);
+    //Faire une requete POST à l'api qui envoie request
+    fetch(apiUrl + "/order", {
+      method: "POST",
+      body: JSON.stringify(request),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => {
+        return response.json(); //TODO : Faire un if pour les 2xx
+      })
+      .then((orderApi) => {
+        console.log("order", orderApi);
+        //Supprimer le localStorage
+        localStorage.removeItem("cart");
+        //Redirection vers la page de confirmation
+        window.location.href = "thankyou.html?order=" + response.orderId;
+      });
+  }
+  else {
+    alert("Veuillez entrer une adresse mail valide");
+    }
 };
 
 
