@@ -66,7 +66,7 @@ btnSubmit.onclick = function (e) {
         //Supprimer le localStorage
         localStorage.removeItem("cart");
         //Redirection vers la page de confirmation
-        window.location.href = "thankyou.html?order=" + orderApi.orderId;
+        window.location.href = "thankyou.html?order=" + JSON.stringify(orderApi);
       });
   }
   else {
@@ -77,25 +77,25 @@ btnSubmit.onclick = function (e) {
 
 async function generateContentFromCart(){
   let total = 0;
-for (let i = 0; i < cart.length; i++) {
-  let id = cart[i].id;
-  try {
-  let response = await fetch(apiUrl + "/" + id);
-  if(!response.ok){ throw Error("Probleme de connexion api")}
-  let  teddys = await response.json();
-  total += teddys.price ;
-  showCartItem(
-        teddys.name,
-        cart[i].color,
-        teddys.price / 100 + "€",
-        cart.indexOf(cart[i])
-      );
-  } catch (e) {
-      console.error(
-        "Oops, an error occurred. Please contact alexandre@nitatemic.ovh"
-      );
-    }
-  }
+  for (let i = 0; i < cart.length; i++) {
+    let id = cart[i].id;
+      try {
+        let response = await fetch(apiUrl + "/" + id);
+        if(!response.ok){ throw Error("Probleme de connexion api")}
+        let  teddys = await response.json();
+        total += teddys.price ;
+        showCartItem(
+              teddys.name,
+              cart[i].color,
+              teddys.price / 100 + "€",
+              cart.indexOf(cart[i])
+            );
+      } catch (e) {
+          console.error(
+            "Oops, an error occurred. Please contact alexandre@nitatemic.ovh"
+          );
+        }
+      }
   return total;
 }
 
