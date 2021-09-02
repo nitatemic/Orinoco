@@ -66,7 +66,7 @@ btnSubmit.onclick = function (e) {
         //Supprimer le localStorage
         localStorage.removeItem("cart");
         //Redirection vers la page de confirmation
-        window.location.href = "thankyou.html?order=" + response.orderId;
+        window.location.href = "thankyou.html?order=" + orderApi.orderId;
       });
   }
   else {
