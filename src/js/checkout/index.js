@@ -40,7 +40,7 @@ let btnSubmit = document.getElementById("btnCommander");
 btnSubmit.onclick = function (e) {
   e.preventDefault();
   let formData = new FormData(document.querySelector("form"));
-                                                  
+
   if ((checkMail(formData.get("email")) === true ) && (checkName(formData.get("lastName")) === true) && (checkName(formData.get("FirstName")) === true)) {
 
     let contact = Object.create({});
@@ -67,9 +67,13 @@ btnSubmit.onclick = function (e) {
         console.log("order", orderApi);
         //Supprimer le localStorage
         localStorage.removeItem("cart");
-        //Redirection vers la page de confirmation
-        window.location.href = "thankyou.html?order=" + JSON.stringify(orderApi);
-      });
+        
+        sessionStorage.setItem("order", JSON.stringify(orderApi));
+        //Redirection vers la page de confirmation avec le SHA256
+        window.location.href =
+          "thankyou.html"
+
+        })
   }
   else {
     alert("Merci de vérifier les données saisies");
