@@ -71,4 +71,15 @@ function checkMail(mail) {
 }
 /* ------------ Fin fonction qui vérifie l'adresse mail ------------ */
 
-export { createUl, showCartItem, createLi, showNumberOfItems, checkMail };
+/* ------------ Fonction qui vérifie le prénom et nom ------------ */
+function checkName(Name) {
+  let regex =
+    /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u;
+  if (regex.test(Name)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+/* ------------ Fin fonction qui vérifie le prénom et nom ------------ */
+export { createUl, showCartItem, createLi, showNumberOfItems, checkMail, checkName };

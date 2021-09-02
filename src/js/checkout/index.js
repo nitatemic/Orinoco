@@ -5,6 +5,7 @@ import {
   createLi,
   showNumberOfItems,
   checkMail,
+  checkName,
 } from "./functions.js";
 
 //Je récupere le tableau "cart" stocké dans le localStorage
@@ -39,7 +40,8 @@ let btnSubmit = document.getElementById("btnCommander");
 btnSubmit.onclick = function (e) {
   e.preventDefault();
   let formData = new FormData(document.querySelector("form"));
-  if (checkMail(formData.get("email")) === true) {
+                                                  
+  if ((checkMail(formData.get("email")) === true ) && (checkName(formData.get("lastName")) === true) && (checkName(formData.get("FirstName")) === true)) {
 
     let contact = Object.create({});
     contact.lastName = formData.get("lastName");
@@ -70,7 +72,7 @@ btnSubmit.onclick = function (e) {
       });
   }
   else {
-    alert("Veuillez entrer une adresse mail valide");
+    alert("Merci de vérifier les données saisies");
     }
 };
 
