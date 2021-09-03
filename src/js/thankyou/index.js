@@ -12,10 +12,10 @@ h1.textContent = "Merci pour votre commande " + sanitize(orderDetail.contact.fir
 //Modifier le p de la page de remerciment
 let orderNumber = document.getElementById("orderNumber");
 orderNumber.textContent =
-  "Vous avez la commande n° " + sanitize(orderDetail.orderId) + "!"
+  "Vous avez la commande n° " + sanitize(orderDetail.orderId) + "!";
 
 //Creer un p dans yourOrder
 let orderTotal = document.createElement("p");
 orderTotal.textContent =
-  "Pour rappel votre commande a un montant total de " +sanitize(totalOrder(orderDetail.products)) +"."
+  "Pour rappel votre commande a un montant total de " +sanitize(totalOrder(orderDetail.products)) +".";
  document.getElementById("yourOrder").appendChild(orderTotal);
