@@ -1,17 +1,21 @@
-import { apiUrl } from "../global.js";
 import {totalOrder} from "./functions.js";
-const urlParams = new URLSearchParams(window.location.search);
-const order = JSON.parse(urlParams.get("order"));
+import {sanitize} from "dompurify/dist/purify.min.js";
 
-//Modifier le h1 de la page de remerciment
-document.querySelector("h1").innerHTML = "Merci pour votre commande " + order.contact.firstName + " !";
+const orderDetail = JSON.parse(sessionStorage.getItem("order"));
+
+//Creer le h1 de la page de remerciment
+let h1 = document.getElementById("h1");
+h1.textContent = "Merci pour votre commande " + sanitize(orderDetail.contact.firstName) + "!";
+
 
 
 //Modifier le p de la page de remerciment
-const orderNumber = document.getElementById("orderNumber");
-orderNumber.innerHTML = "Vous avez la commande n° " + "<strong>" + order.orderId + "</strong> !";
+let orderNumber = document.getElementById("orderNumber");
+orderNumber.textContent =
+  "Vous avez la commande n° " + sanitize(orderDetail.orderId) + "!";
 
 //Creer un p dans yourOrder
-const orderTotal = document.createElement("p");
-orderTotal.innerHTML = "Pour rappel votre commande a un montant total de " + "<strong>" + totalOrder(order.products) + "</strong>.";
+let orderTotal = document.createElement("p");
+orderTotal.textContent =
+  "Pour rappel votre commande a un montant total de " +sanitize(totalOrder(orderDetail.products)) +".";
  document.getElementById("yourOrder").appendChild(orderTotal);

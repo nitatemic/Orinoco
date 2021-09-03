@@ -1,4 +1,4 @@
-/* ------------ Fonction qui fait le total de la commande ----------*/
+/* ------------ Fonction qui fait le total de la commande ---------- */
 function totalOrder(cart)   {
     let total = 0;
     for (var i = 0; i < cart.length; i++) {
@@ -6,5 +6,6 @@ function totalOrder(cart)   {
     }
     return total/ 100 + "€";
 }
-/* ----------------- Fonction qui fait le total de la commande --------------*/
+/* ---------- Fonction qui fait le total de la commande ---------- */
+
 export { totalOrder };
