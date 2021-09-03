@@ -70,9 +70,7 @@ btnSubmit.onclick = function (e) {
         
         sessionStorage.setItem("order", JSON.stringify(orderApi));
         //Redirection vers la page de confirmation avec le SHA256
-        window.location.href =
-          "thankyou.html"
-
+        window.location.href =   "thankyou.html";
         })
   }
   else {
