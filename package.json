@@ -20,5 +20,6 @@
   },
   "browserslist": "last 4 versions",
   "dependencies": {
+    "dompurify": "^2.3.1"
   }
 }
