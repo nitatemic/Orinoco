@@ -4,7 +4,7 @@ import {sanitize} from "dompurify/dist/purify.min.js";
 const orderDetail = JSON.parse(sessionStorage.getItem("order"));
 
 //Creer le h1 de la page de remerciment
-let h1 = document.getElementById("h1");
+let h1 = document.querySelector("h1");
 h1.textContent = "Merci pour votre commande " + sanitize(orderDetail.contact.firstName) + "!";
 
 
