@@ -45,7 +45,7 @@ function createItem(nameItem, colorItem, priceItem, i) {
   document.getElementById(nameItem + "Li" + i).appendChild(span2);
 }
 
-//fonction qui recupère le nombre d'article dans le panier
+/* ---------- Fonction qui recupère le nombre d'article dans le panier (Return : int) ---------- */
 function getCartLength(cart) {
   if (cart === null) {
     return 0;
@@ -53,13 +53,19 @@ function getCartLength(cart) {
     return cart.length;
   }
 }
+/* ---------- Fin fonction qui recupère le nombre d'article dans le panier (Return : int) ---------- */
 
-//Fonction qui ajoute le nombre d'article dans le panier dans le compteur
+
+
+/* ---------- Fonction qui ajoute le nombre d'article dans le panier dans le compteur (Return : void) ---------- */
 function showNumberOfItems(cart, idOfSpan) {
   document.getElementById(idOfSpan).innerHTML = getCartLength(cart);
 }
+/* ---------- Fin fonction qui ajoute le nombre d'article dans le panier dans le compteur (Return : void) ---------- */
 
-/* ------------ Fonction qui vérifie l'adresse mail ------------ */
+
+
+/* ------------ Fonction qui vérifie l'adresse mail (Return boolean) ------------ */
 function checkMail(mail) {
   let regex =
     /^([a-z0-9]+(?:[._-][a-z0-9]+)*)@([a-z0-9]+(?:[.-][a-z0-9]+)*\.[a-z]{2,})$/i;
@@ -67,11 +73,13 @@ function checkMail(mail) {
 }
 /* ------------ Fin fonction qui vérifie l'adresse mail ------------ */
 
-/* ------------ Fonction qui vérifie le prénom et nom ------------ */
+/* ------------ Fonction qui vérifie le prénom et nom (Return : boolean) ------------ */
 function checkName(Name) {
   let regex =
     /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆŠŽ∂ð ,.'-]+$/u;
   return regex.test(Name);
 }
-/* ------------ Fin fonction qui vérifie le prénom et nom ------------ */
+/* ------------ Fin fonction qui vérifie le prénom et nom (Return : boolean) ------------ */
+
+
 export { createUl, showCartItem, createLi, showNumberOfItems, checkMail, checkName };

@@ -30,13 +30,13 @@ fetch(apiUrlId)
     teddyImgContainer.className = "col-auto d-none d-lg-block";
     col1.appendChild(teddyImgContainer);
 
-    //Add the image to the teddyImgContainer div
+    //Add the image to the teddyImgContainer div //TODO: Faire une fonction
     let teddyImg = document.createElement("img");
     let imgUrlSecure = teddys.imageUrl;
     imgUrlSecure = imgUrlSecure.replace(/^http:\/\//i, "https://");
     console.log(imgUrlSecure);
     teddyImg.src = imgUrlSecure;
-    
+
     teddyImg.className = "img-fluid rounded";
     teddyImg.width = 400;
     teddyImg.height = 500;
