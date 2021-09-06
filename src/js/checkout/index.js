@@ -61,7 +61,7 @@ btnSubmit.onclick = function (e) {
       },
     })
       .then((response) => {
-        return response.json(); //TODO : Faire un if pour les 2xx
+        return response.json();
       })
       .then((orderApi) => {
         console.log("order", orderApi);

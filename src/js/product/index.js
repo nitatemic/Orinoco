@@ -1,7 +1,7 @@
 import { apiUrl } from "../global.js";
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get("id");
-const apiUrlId = apiUrl + "/" + id; //TODO : utiliser l'api
+const apiUrlId = apiUrl + "/" + id;
 import { getColor } from "./functions.js";
 fetch(apiUrlId)
   .then(function (res) {
@@ -33,10 +33,8 @@ fetch(apiUrlId)
     //Add the image to the teddyImgContainer div //TODO: Faire une fonction
     let teddyImg = document.createElement("img");
     let imgUrlSecure = teddys.imageUrl;
-    imgUrlSecure = imgUrlSecure.replace(/^http:\/\//i, "https://");
-    console.log(imgUrlSecure);
+    imgUrlSecure = imgUrlSecure.replace(/^http:\/\//i, "https://"); //Remplace  http par https
     teddyImg.src = imgUrlSecure;
-
     teddyImg.className = "img-fluid rounded";
     teddyImg.width = 400;
     teddyImg.height = 500;
@@ -66,7 +64,7 @@ fetch(apiUrlId)
     //Create a h4 in the col2 div
     let h4 = document.createElement("h4");
     h4.className = "h6";
-    h4.textContent = "Choissisez la couleur de votre teddy :";
+    h4.textContent = "Choisissez la couleur de votre teddy :";
     col2.appendChild(h4);
 
     //Create a form in the col2 div
@@ -94,7 +92,7 @@ fetch(apiUrlId)
     //Ajouter un attribut onclick au bouton
     submit.onclick = function (e) {
       e.preventDefault();
-      const color = document.getElementById("colorschoise").value;
+      let color = document.getElementById("colorschoise").value;
       //TODO : Faire un test pour vérifier les données qui vont être envoyées
       getColor(id, color);
     };
