@@ -1,11 +1,11 @@
-//Fonction qui affiche les teddies sur la page d'acceil
+//Fonction qui affiche les teddies sur la page d'accueil
 function showTeddies(teddys) {
   //Faire une boucle qui parcours tout les teddys
     let j = -2; //Sert pour les cas de i impaires
     for (let i = 0; i < teddys.length; i++) {
         let teddy = teddys[i];
         teddy.price = teddy.price / 100;
-        //Creer une div si i est pair
+        //Créer une div si i est pair
         if (i % 2 === 0) {
             let div = document.createElement("div");
             div.className = "row mb-2";
@@ -13,7 +13,7 @@ function showTeddies(teddys) {
             document.getElementById("listOfTeddies").appendChild(div);
             j += 2;
         }
-        //Creer une div dans la dernière div créée
+        //Créer une div dans la dernière div créée
         let div = document.createElement("div");
         div.className = "col-md-6";
         let imgUrlSecure = teddy.imageUrl;

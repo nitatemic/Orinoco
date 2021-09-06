@@ -1,7 +1,5 @@
-//Créer une fonction qui recupere la couleur choisie par l'utilisateur dans le select ainsi que l'id du teddy et la stocke dans un objet avec localStorage
+//Fonction qui récupère la couleur choisie par l'utilisateur dans le select ainsi que l'ID du teddy et la stocke dans un objet avec localStorage
 //Cette fonction sera appelée par le button "Ajouter au panier"
-
-//Fonction qui recupere la couleur choisie par l'utilisateur dans le select ainsi que l'id du teddy et la stocke dans un string avec localStorage
 function getColor(getColorId, getColorColor) {
   const temp = {
     id: getColorId,
