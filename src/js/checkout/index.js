@@ -8,7 +8,7 @@ import {
   checkName,
 } from "./functions.js";
 
-//Je récupere le tableau "cart" stocké dans le localStorage
+//Je récupère le tableau "cart" stocké dans le localStorage
 let cart = JSON.parse(localStorage.getItem("cart"));
 
 //Ajouter le nombre de produit dans la div numberOfItems
@@ -24,12 +24,12 @@ createLi(
   "cartListUl"
 );
 
-//Creer un span dans la li
+//Mettre un span dans la li
 let span3 = document.createElement("span");
 span3.innerHTML = "Total (EUR)";
 document.getElementById("totalLi").appendChild(span3);
 
-//Creer un strong dans la li
+//Mettre un strong dans la li
 let strong4 = document.createElement("strong");
 strong4.innerHTML = total / 100 + "€";
 document.getElementById("totalLi").appendChild(strong4);
@@ -52,7 +52,7 @@ btnSubmit.onclick = function (e) {
 
     let request = { contact, products: cart.map((item) => item.id) };
     console.log(request);
-    //Faire une requete POST à l'api qui envoie request
+    //Faire une requête POST à l'API qui envoie request
     fetch(apiUrl + "/order", {
       method: "POST",
       body: JSON.stringify(request),
@@ -85,7 +85,7 @@ async function generateContentFromCart(){
     let id = cart[i].id;
       try {
         let response = await fetch(apiUrl + "/" + id);
-        if(!response.ok){ throw Error("Probleme de connexion api")}
+        if(!response.ok){ throw Error("Problème de connexion api")}
         let  teddys = await response.json();
         total += teddys.price ;
         showCartItem(

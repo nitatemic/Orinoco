@@ -1,4 +1,4 @@
-//Creer une list ul dans la div cart
+//Créer une list ul dans la div cart
 function createUl(ulId, ulClass, ulParent) {
   let ul1 = document.createElement("ul");
   ul1.id = ulId;
@@ -45,7 +45,7 @@ function createItem(nameItem, colorItem, priceItem, i) {
   document.getElementById(nameItem + "Li" + i).appendChild(span2);
 }
 
-/* ---------- Fonction qui recupère le nombre d'article dans le panier (Return : int) ---------- */
+/* ---------- Fonction qui récupère le nombre d'article dans le panier (Return : int) ---------- */
 function getCartLength(cart) {
   if (cart === null) {
     return 0;
@@ -53,7 +53,7 @@ function getCartLength(cart) {
     return cart.length;
   }
 }
-/* ---------- Fin fonction qui recupère le nombre d'article dans le panier (Return : int) ---------- */
+/* ---------- Fin fonction qui récupère le nombre d'article dans le panier (Return : int) ---------- */
 
 
 
