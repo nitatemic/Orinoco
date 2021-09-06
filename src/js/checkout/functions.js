@@ -63,23 +63,15 @@ function showNumberOfItems(cart, idOfSpan) {
 function checkMail(mail) {
   let regex =
     /^([a-z0-9]+(?:[._-][a-z0-9]+)*)@([a-z0-9]+(?:[.-][a-z0-9]+)*\.[a-z]{2,})$/i;
-  if (regex.test(mail)) {
-    return true;
-  } else {
-    return false;
-  }
+  return regex.test(mail);
 }
 /* ------------ Fin fonction qui vérifie l'adresse mail ------------ */
 
 /* ------------ Fonction qui vérifie le prénom et nom ------------ */
 function checkName(Name) {
   let regex =
-    /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u;
-  if (regex.test(Name)) {
-    return true;
-  } else {
-    return false;
-  }
+    /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆŠŽ∂ð ,.'-]+$/u;
+  return regex.test(Name);
 }
 /* ------------ Fin fonction qui vérifie le prénom et nom ------------ */
 export { createUl, showCartItem, createLi, showNumberOfItems, checkMail, checkName };

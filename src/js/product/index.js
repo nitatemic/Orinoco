@@ -11,7 +11,6 @@ fetch(apiUrlId)
   })
 
   .then(function (teddys) {
-    let i = -1;
 
     //Put the name of the teddie in the title of the page
     document.title = teddys.name + " | Orinoco";
@@ -39,8 +38,8 @@ fetch(apiUrlId)
     teddyImg.src = imgUrlSecure;
     
     teddyImg.className = "img-fluid rounded";
-    teddyImg.width = "400";
-    teddyImg.height = "500";
+    teddyImg.width = 400;
+    teddyImg.height = 500;
     teddyImgContainer.appendChild(teddyImg);
 
     //Create a div in the container div
