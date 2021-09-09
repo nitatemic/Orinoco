@@ -67,7 +67,6 @@ btnSubmit.onclick = function (e) {
         console.log("order", orderApi);
         //Supprimer le localStorage
         localStorage.removeItem("cart");
-        
         sessionStorage.setItem("order", JSON.stringify(orderApi));
         //Redirection vers la page de confirmation avec le SHA256
         window.location.href =   "thankyou.html";

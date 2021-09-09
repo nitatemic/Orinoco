@@ -74,10 +74,10 @@ function checkMail(mail) {
 /* ------------ Fin fonction qui vérifie l'adresse mail ------------ */
 
 /* ------------ Fonction qui vérifie le prénom et nom (Return : boolean) ------------ */
-function checkName(Name) {
+function checkName(name) {
   let regex =
     /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆŠŽ∂ð ,.'-]+$/u;
-  return regex.test(Name);
+  return regex.test(name);
 }
 /* ------------ Fin fonction qui vérifie le prénom et nom (Return : boolean) ------------ */
 
