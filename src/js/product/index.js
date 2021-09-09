@@ -22,7 +22,7 @@ fetch(apiUrlId)
 
     //Create a div in the row div
     let col1 = document.createElement("div");
-    col1.className = "col";
+    col1.className = "col mt-5";
     row1.appendChild(col1);
 
     //Create a div in the col div
@@ -72,15 +72,16 @@ fetch(apiUrlId)
     form.className = "form-inline";
     col2.appendChild(form);
 
-    //Create a selection in the form
+    //Create a select in the form
     let select = document.createElement("select");
     select.className = "dropdown";
     select.id = "colorschoise";
 
-    //Add all colors in the selection
+    //Add all colors in the sel
     for (let j = 0; j < teddys.colors.length; j++) {
       let option = document.createElement("option");
       option.textContent = teddys.colors[j];
+      select.className = "me-2";
       select.appendChild(option);
     }
     form.appendChild(select);
