@@ -2,7 +2,7 @@ import { apiUrl } from "../global.js";
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get("id");
 const apiUrlId = apiUrl + "/" + id;
-import { getColor } from "./functions.js";
+import { getColor, createImage } from "./functions.js";
 fetch(apiUrlId)
   .then(function (res) {
     if (res.ok) {
@@ -30,15 +30,7 @@ fetch(apiUrlId)
     teddyImgContainer.className = "col-auto d-none d-lg-block";
     col1.appendChild(teddyImgContainer);
 
-    //Add the image to the teddyImgContainer div //TODO: Faire une fonction
-    let teddyImg = document.createElement("img");
-    let imgUrlSecure = teddys.imageUrl;
-    imgUrlSecure = imgUrlSecure.replace(/^http:\/\//i, "https://"); //Remplace  http par https
-    teddyImg.src = imgUrlSecure;
-    teddyImg.className = "img-fluid rounded";
-    teddyImg.width = 400;
-    teddyImg.height = 500;
-    teddyImgContainer.appendChild(teddyImg);
+    createImage(teddys.imageUrl, "img-fluid rounded", 400, 500, teddyImgContainer )
 
     //Create a div in the container div
     let col2 = document.createElement("div");
