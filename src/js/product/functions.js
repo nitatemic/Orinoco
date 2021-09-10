@@ -20,7 +20,7 @@ function getColor(getColorId, getColorColor) {
     }
 }
 
-/* ---------- Fonction qui créer une image ---------- */
+/* ---------- Fonction qui créer une image (return : void) ---------- */
 function createImage(imageURL, className, width, height, container )  {
   let teddyImg = document.createElement("img");
   teddyImg.src = imageURL.replace(/^http:\/\//i, "https://"); //Remplace  http par https
@@ -29,5 +29,5 @@ function createImage(imageURL, className, width, height, container )  {
   teddyImg.height = height;
   container.appendChild(teddyImg);
 }
-
+/* ---------- Fin fonction qui créer une image (return : void) ---------- */
 export { getColor, createImage };
