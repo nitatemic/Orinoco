@@ -31,7 +31,7 @@ function getColor(getColorId, getColorColor) {
 }
 
 /* ---------- Fonction qui créer une image (return : void) ---------- */
-function createImage(imageURL, className, width, height, container )  {
+function createImage(imageURL, className, width, height, container)  {
   let teddyImg = document.createElement("img");
   teddyImg.src = imageURL.replace(/^http:\/\//i, "https://"); //Remplace  http par https
   teddyImg.className = className;
@@ -155,15 +155,11 @@ function getCartLength(cart) {
 }
 /* ---------- Fin fonction qui récupère le nombre d'article dans le panier (Return : int) ---------- */
 
-
-
 /* ---------- Fonction qui ajoute le nombre d'article dans le panier dans le compteur (Return : void) ---------- */
 function showNumberOfItems(cart, idOfSpan) {
   document.getElementById(idOfSpan).innerHTML = getCartLength(cart);
 }
 /* ---------- Fin fonction qui ajoute le nombre d'article dans le panier dans le compteur (Return : void) ---------- */
-
-
 
 /* ------------ Fonction qui vérifie l'adresse mail (Return boolean) ------------ */
 function checkMail(mail) {

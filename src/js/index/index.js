@@ -1,7 +1,5 @@
 import { apiUrl } from "../global.js";
-import {
-  showTeddies,
-} from "../functions.js";
+import { showTeddies } from "../functions.js";
 fetch(apiUrl)
   .then(function (res) {
     if (res.ok) {
