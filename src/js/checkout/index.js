@@ -1,5 +1,5 @@
 import { apiUrl } from "../global.js";
-import {createUl, showCartItem, createLi, showNumberOfItems, checkMail, checkName} from "../functions.js";
+import {createUl, showCartItem, createLi, showNumberOfItems, checkMail, checkName, createHType} from "../functions.js";
 
 //Je récupère le tableau "cart" stocké dans le localStorage
 let cart = JSON.parse(localStorage.getItem("cart"));
@@ -11,14 +11,10 @@ generateContentFromCart().then(total => {
 createLi("totalLi", "list-group-item d-flex justify-content-between","cartListUl");
 
 //Mettre un span dans la li
-let span3 = document.createElement("span");
-span3.innerHTML = "Total (EUR)";
-document.getElementById("totalLi").appendChild(span3);
+createHType("span", "Total (EUR)", "TotalLi");
 
 //Mettre un strong dans la li
-let strong4 = document.createElement("strong");
-strong4.innerHTML = total / 100 + "€";
-document.getElementById("totalLi").appendChild(strong4);
+createHType("strong", total / 100 + "€", "TotalLi");
 });
 
 let btnSubmit = document.getElementById("btnCommander");
