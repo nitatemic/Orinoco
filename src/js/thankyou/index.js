@@ -1,4 +1,4 @@
-import {totalOrder} from "./functions.js";
+import {totalOrder} from "../functions.js";
 import {sanitize} from "dompurify/dist/purify.min.js";
 
 const orderDetail = JSON.parse(sessionStorage.getItem("order"));
