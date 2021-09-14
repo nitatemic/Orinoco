@@ -1,28 +1,14 @@
 import { apiUrl } from "../global.js";
-import {
-  createUl,
-  showCartItem,
-  createLi,
-  showNumberOfItems,
-  checkMail,
-  checkName,
-} from "./functions.js";
+import {createUl, showCartItem, createLi, showNumberOfItems, checkMail, checkName} from "../functions.js";
 
 //Je récupère le tableau "cart" stocké dans le localStorage
 let cart = JSON.parse(localStorage.getItem("cart"));
 
 //Ajouter le nombre de produit dans la div numberOfItems
 showNumberOfItems(cart, "numberOfItems");
-
 createUl("cartListUl", "list-group mb-3", "cartList");
-
 generateContentFromCart().then(total => {
-
-createLi(
-  "totalLi",
-  "list-group-item d-flex justify-content-between",
-  "cartListUl"
-);
+createLi("totalLi", "list-group-item d-flex justify-content-between","cartListUl");
 
 //Mettre un span dans la li
 let span3 = document.createElement("span");
@@ -35,14 +21,12 @@ strong4.innerHTML = total / 100 + "€";
 document.getElementById("totalLi").appendChild(strong4);
 });
 
-
 let btnSubmit = document.getElementById("btnCommander");
 btnSubmit.onclick = function (e) {
   e.preventDefault();
   let formData = new FormData(document.querySelector("form"));
 
   if ((checkMail(formData.get("email")) === true ) && (checkName(formData.get("lastName")) === true) && (checkName(formData.get("FirstName")) === true)) {
-
     let contact = Object.create({});
     contact.lastName = formData.get("lastName");
     contact.firstName = formData.get("firstName");
@@ -77,7 +61,6 @@ btnSubmit.onclick = function (e) {
     }
 };
 
-
 async function generateContentFromCart(){
   let total = 0;
   for (let i = 0; i < cart.length; i++) {
@@ -101,4 +84,3 @@ async function generateContentFromCart(){
       }
   return total;
 }
-
