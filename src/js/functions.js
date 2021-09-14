@@ -48,10 +48,11 @@ function createDiv(className, container, id) {
   container.appendChild(div);
 }
 
-function createHType(type, text, container, className) {
+function createHType(type, text, container, className, id) {
   let hType = document.createElement(type);
   hType.textContent = text;
   hType.className = className;
+  hType.id = id;
   container.appendChild(hType);
 }
 
@@ -96,29 +97,10 @@ function showTeddies(teddys) {
     }
 }
 
-//Créer une list ul dans la div cart
-function createUl(ulId, ulClass, ulParent) {
-  let ul1 = document.createElement("ul");
-  ul1.id = ulId;
-  ul1.className = ulClass;
-  document.getElementById(ulParent).appendChild(ul1);
-}
-
 //Fonction qui affiche un produit du panier
 function showCartItem(nameItem, colorItem, priceItem, i) {
-  createLi(
-    nameItem + "Li" + i,
-    "list-group-item d-flex justify-content-between lh-sm",
-    "cartListUl"
-  );
+  createHType("li", "", "cartListUl", "list-group-item d-flex justify-content-between lh-sm",nameItem + "Li" + i);
   createItem(nameItem, colorItem, priceItem, i);
-}
-
-function createLi(liId, liClass, liParent) {
-  let li1 = document.createElement("li");
-  li1.id = liId;
-  li1.className = liClass;
-  document.getElementById(liParent).appendChild(li1);
 }
 
 function createItem(nameItem, colorItem, priceItem, i) {
@@ -155,24 +137,16 @@ function getCartLength(cart) {
 }
 /* ---------- Fin fonction qui récupère le nombre d'article dans le panier (Return : int) ---------- */
 
-/* ---------- Fonction qui ajoute le nombre d'article dans le panier dans le compteur (Return : void) ---------- */
-function showNumberOfItems(cart, idOfSpan) {
-  document.getElementById(idOfSpan).innerHTML = getCartLength(cart);
-}
-/* ---------- Fin fonction qui ajoute le nombre d'article dans le panier dans le compteur (Return : void) ---------- */
-
 /* ------------ Fonction qui vérifie l'adresse mail (Return boolean) ------------ */
 function checkMail(mail) {
-  let regex =
-    /^([a-z0-9]+(?:[._-][a-z0-9]+)*)@([a-z0-9]+(?:[.-][a-z0-9]+)*\.[a-z]{2,})$/i;
+  let regex = /^([a-z0-9]+(?:[._-][a-z0-9]+)*)@([a-z0-9]+(?:[.-][a-z0-9]+)*\.[a-z]{2,})$/i;
   return regex.test(mail);
 }
 /* ------------ Fin fonction qui vérifie l'adresse mail ------------ */
 
 /* ------------ Fonction qui vérifie le prénom et nom (Return : boolean) ------------ */
 function checkName(name) {
-  let regex =
-    /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆŠŽ∂ð ,.'-]+$/u;
+  let regex = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆŠŽ∂ð ,.'-]+$/u;
   return regex.test(name);
 }
 /* ------------ Fin fonction qui vérifie le prénom et nom (Return : boolean) ------------ */
@@ -185,8 +159,6 @@ export {
   createHType,
   showTeddies,
   getCartLength,
-  createUl,
-  showNumberOfItems,
   showCartItem,
   checkMail,
   checkName,

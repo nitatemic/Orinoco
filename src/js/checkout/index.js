@@ -1,14 +1,14 @@
 import { apiUrl } from "../global.js";
-import {createUl, showCartItem, createLi, showNumberOfItems, checkMail, checkName, createHType} from "../functions.js";
+import { showCartItem, getCartLength, checkMail, checkName, createHType} from "../functions.js";
 
 //Je récupère le tableau "cart" stocké dans le localStorage
 let cart = JSON.parse(localStorage.getItem("cart"));
 
 //Ajouter le nombre de produit dans la div numberOfItems
-showNumberOfItems(cart, "numberOfItems");
-createUl("cartListUl", "list-group mb-3", "cartList");
+document.getElementById("numberOfItems").innerHTML = getCartLength(cart);
+createHType("ul", "", "cartList", "list-group mb-3");
 generateContentFromCart().then(total => {
-createLi("totalLi", "list-group-item d-flex justify-content-between","cartListUl");
+createHType("li", "", "cartListUl", "list-group-item d-flex justify-content-between", "cartListUl");
 
 //Mettre un span dans la li
 createHType("span", "Total (EUR)", "TotalLi");
