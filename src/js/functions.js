@@ -48,10 +48,18 @@ function createDiv(className, container, id) {
 }
 
 function createHType(type, text, container, className, id) {
-  let hType = document.createElement(type);
-  hType.textContent = text;
-  hType.className = className;
-  hType.id = id;
+    let hType = document.createElement(type);
+
+  if (text !== undefined) {
+      hType.textContent = text;
+  }
+  if (className !== undefined) {
+    hType.className = className;
+  }
+  if (id !== undefined) {
+    hType.id = id;
+  }
+  
   document.getElementById(container).appendChild(hType);
 }
 
