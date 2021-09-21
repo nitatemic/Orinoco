@@ -1,4 +1,5 @@
 module.exports = {
+  mode : "development",
   entry: {
     index: "./src/js/index/index.js",
     product: "./src/js/product/index.js",
