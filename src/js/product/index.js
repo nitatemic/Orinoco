@@ -46,7 +46,7 @@ fetch(apiUrlId)
     createHType("form", "", "divCol2", "form-inline", "form");
 
     //Create a select in the form
-    createHType("select", "", "form", "dropdown", "colorschoise");
+    createHType("select", "", "form", "dropdown m-2", "colorschoise");
 
     //Add all colors in selection
     for (let j = 0; j < teddys.colors.length; j++) {
