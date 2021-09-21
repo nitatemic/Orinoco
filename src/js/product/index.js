@@ -36,8 +36,7 @@ fetch(apiUrlId)
     createHType("h2", teddys.description, "divCol2", "h5");
 
     //Create a h3 in the col2 div
-     let priceString = "Price: " + teddys.price + "€";
-    createHType("h3", priceString, "divCol2");
+    createHType("h3", teddys.price / 100 + " €", "divCol2");
 
     //Create a h4 in the col2 div
     createHType("h4", "Choisissez la couleur de votre teddy :", "divCol2","h6");
