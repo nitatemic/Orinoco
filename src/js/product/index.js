@@ -36,21 +36,20 @@ fetch(apiUrlId)
     createHType("h2", teddys.description, "divCol2", "h5");
 
     //Create a h3 in the col2 div
-     let priceString = "Price: " + teddys.price + "€";
-    createHType("h3", priceString, "divCol2");
+    createHType("h3", teddys.price / 100 + " €", "divCol2");
 
     //Create a h4 in the col2 div
     createHType("h4", "Choisissez la couleur de votre teddy :", "divCol2","h6");
 
     //Create a form in the col2 div
-    createHType("form", "", "form-inline", "divCol2", "form")
+    createHType("form", "", "divCol2", "form-inline", "form");
 
     //Create a select in the form
-    createHType("select", "", "dropdown", "form", "colorschoise");
+    createHType("select", "", "form", "dropdown m-2", "colorschoise");
 
     //Add all colors in selection
     for (let j = 0; j < teddys.colors.length; j++) {
-      createHType("option", teddys.colors[j], "me-2", "colorschoise");
+      createHType("option", teddys.colors[j], "colorschoise", "me-2");
     }
     document.getElementById("form").appendChild(document.getElementById("colorschoise"));
 

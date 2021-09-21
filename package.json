@@ -5,7 +5,7 @@
   "main": "",
   "scripts": {
     "build": "webpack",
-    "watch": "npm run sass & webpack --watch",
+    "watch": "webpack --watch",
     "sass": "sass --watch ./src/sass/main.scss:./dist/css/main.css"
   },
   "author": "",
@@ -19,6 +19,6 @@
   "browserslist": "last 4 versions",
   "dependencies": {
     "dompurify": "^2.3.1",
-        "sass": "^1.32.13"
+    "sass": "^1.32.13"
   }
 }

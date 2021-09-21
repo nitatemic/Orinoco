@@ -15,7 +15,6 @@ function getColor(getColorId, getColorColor) {
     id: getColorId,
     color: getColorColor,
   };
-
   //Si le localStorage ne contient pas de tableau appelée "cart", on l'initialise.
   if (localStorage.getItem("cart") === null) {
     localStorage.setItem("cart", JSON.stringify([temp]));
@@ -45,7 +44,7 @@ function createDiv(className, container, id) {
   let div = document.createElement("div");
   div.className = className;
   div.id = id;
-  container.appendChild(div);
+  document.getElementById(container).appendChild(div);
 }
 
 function createHType(type, text, container, className, id) {
@@ -53,7 +52,7 @@ function createHType(type, text, container, className, id) {
   hType.textContent = text;
   hType.className = className;
   hType.id = id;
-  container.appendChild(hType);
+  document.getElementById(container).appendChild(hType);
 }
 
 //Fonction qui affiche les teddies sur la page d'accueil

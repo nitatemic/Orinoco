@@ -6,15 +6,15 @@ let cart = JSON.parse(localStorage.getItem("cart"));
 
 //Ajouter le nombre de produit dans la div numberOfItems
 document.getElementById("numberOfItems").innerHTML = getCartLength(cart);
-createHType("ul", "", "cartList", "list-group mb-3");
+createHType("ul", "", "cartList", "list-group mb-3", "cartListUl");
 generateContentFromCart().then(total => {
-createHType("li", "", "cartListUl", "list-group-item d-flex justify-content-between", "cartListUl");
+createHType("li", "", "cartListUl", "list-group-item d-flex justify-content-between", "totalLi");
 
 //Mettre un span dans la li
-createHType("span", "Total (EUR)", "TotalLi");
+createHType("span", "Total (EUR)", "totalLi", "", "totalSpan");
 
 //Mettre un strong dans la li
-createHType("strong", total / 100 + "€", "TotalLi");
+createHType("strong", total / 100 + "€", "totalSpan");
 });
 
 let btnSubmit = document.getElementById("btnCommander");
