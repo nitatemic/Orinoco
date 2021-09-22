@@ -92,7 +92,7 @@ function showTeddies(teddys) {
                         <div class="mb-1 text-muted">${teddy.price} €
                         </div>
                         <p class="card-text mb-auto">${teddy.description}</p>
-                        <div class ="col-auto d-none d-lg-block" id="teddy__0__img">
+                        <div class ="col-auto d-lg-block" id="teddy__0__img">
                             <img src="${imgUrlSecure}" alt="${teddy.name}" class="img-fluid rounded"  width="200" height="250" role="img" aria-label="Ours en peluche fait main">
                         </div>
                     </div>

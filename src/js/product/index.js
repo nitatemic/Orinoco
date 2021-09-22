@@ -22,7 +22,7 @@ fetch(apiUrlId)
     createDiv("col-md-4", "divRow", "divCol");
 
     //Create a div in the col div
-    createDiv("col-auto d-none d-lg-block", "divCol", "teddyImgContainer");
+    createDiv("col-auto d-lg-block", "divCol", "teddyImgContainer");
 
     createImage(teddys.imageUrl, "img-fluid rounded", 400, 500, "teddyImgContainer");
 
