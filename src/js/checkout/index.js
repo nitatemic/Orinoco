@@ -8,13 +8,25 @@ let cart = JSON.parse(localStorage.getItem("cart"));
 document.getElementById("numberOfItems").innerHTML = getCartLength(cart);
 createHType("ul", "", "cartList", "list-group mb-3", "cartListUl");
 generateContentFromCart().then(total => {
-createHType("li", "", "cartListUl", "list-group-item d-flex justify-content-between", "totalLi");
+createHType(
+  "li",
+  "",
+  "cartListUl",
+  "list-group-item d-flex justify-content-between",
+  "totalLi"
+);
 
 //Mettre un span dans la li
-createHType("span", "Total (EUR)", "totalLi", "", "totalSpan");
+createHType(
+  "span",
+  "Total (EUR)",
+  "totalLi",
+  "",
+  "totalSpan"
+);
 
 //Mettre un strong dans la li
-createHType("strong", total / 100 + "€", "totalSpan");
+createHType("strong", total / 100 + "€", "totalLi", "");
 });
 
 let btnSubmit = document.getElementById("btnCommander");
