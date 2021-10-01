@@ -1,5 +1,5 @@
 import { apiUrl } from "../global.js";
-import { showCartItem, getCartLength, checkMail, checkName, createHType} from "../functions.js";
+import { showCartItem, getCartLength, checkMail, checkName, createHType, checkStreet} from "../functions.js";
 
 //Je récupère le tableau "cart" stocké dans le localStorage
 let cart = JSON.parse(localStorage.getItem("cart"));
@@ -34,7 +34,11 @@ btnSubmit.onclick = function (e) {
   e.preventDefault();
   let formData = new FormData(document.querySelector("form"));
 
-  if ((checkMail(formData.get("email")) === true ) && (checkName(formData.get("lastName")) === true) && (checkName(formData.get("FirstName")) === true)) {
+  if ((checkMail(formData.get("email")) === true )
+      && (checkName(formData.get("lastName")) === true)
+      && (checkName(formData.get("FirstName")) === true)
+      && (checkName(formData.get("city")) === true) &&
+      (checkStreet(formData.get("adresse")) === true)) {
     let contact = Object.create({});
     contact.lastName = formData.get("lastName");
     contact.firstName = formData.get("firstName");
