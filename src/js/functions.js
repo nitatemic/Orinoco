@@ -158,6 +158,15 @@ function checkName(name) {
 }
 /* ------------ Fin fonction qui vérifie le prénom et nom (Return : boolean) ------------ */
 
+/* ------------ Fonction qui vérifie le prénom et nom (Return : boolean) ------------ */
+function checkStreet(street) {
+    let regex = /^([1-9][0-9]*(?:-[1-9][0-9]*)*)[\s,-]+(?:(bis|ter|qua)[\s,-]+)?([\w]+[\w]*)[\s,]+([-\w].+)$/gmiu;
+  return regex.test(street);
+}
+/* ------------ Fin fonction qui vérifie le prénom et nom (Return : boolean) ------------ */
+
+
+
 export {
   totalOrder,
   getColor,
@@ -169,4 +178,5 @@ export {
   showCartItem,
   checkMail,
   checkName,
+  checkStreet,
 };
