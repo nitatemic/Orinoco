@@ -1,1 +1,1 @@
-export const apiUrl = "https://backorinoco.nitatemic.ovh/api/teddies";
+export const apiUrl = "https://backorinoco.nitatemic.dev/api/teddies";
