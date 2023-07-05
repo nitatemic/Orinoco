@@ -19,6 +19,6 @@
   "browserslist": "last 4 versions",
   "dependencies": {
     "dompurify": "^2.3.6",
-    "sass": "^1.43.5"
+    "sass": "^1.63.4"
   }
 }
